@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g++ -o main src/main.cpp src/UI.cpp -Iinclude -lSDL2
+./main
