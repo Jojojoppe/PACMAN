@@ -1,18 +1,51 @@
-/*
- * Game.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once 
 
-#ifndef SRC_GAME_H_
-#define SRC_GAME_H_
+#include <vector>
+#include <map>
 
-class Game
-{
-public:
+#include <VisibleObject.h>
+#include <Pacman.h>
+#include <Score.h>
 
+#include <SDL2/SDL.h>
+
+enum ObjectType{
+	wall,
+	pacmanright
 };
 
-#endif /* SRC_GAME_H_ */
+enum SpriteInfo{
+	x,
+	y,
+	sizex,
+	sizey
+};
+
+class Game{
+	
+	private:
+		std::vector<VisibleObject> 	field;
+		Score						score;
+		
+		// Graphic things
+		SDL_Window *				window;
+		SDL_Renderer *				renderer;
+		SDL_Texture *				sheet;
+		
+		std::map<ObjectType,std::map<SpriteInfo,int>> spriteMap; 
+		
+		void loadSprites();	
+	
+	public:
+		Pacman						pacman;
+		
+		SDL_TimerID					timer;
+		
+		void main();
+		void resetGame();
+		void newLevel();
+		
+		void refresh();
+};
+
+extern uint32_t refreshTimer(uint32_t interval, void * param);

@@ -1,22 +1,7 @@
-/*
- * Fruit.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_FRUIT_H_
-#define SRC_FRUIT_H_
+#include <StaticObject.h>
 
-namespace Fruit {
-
-class Fruit {
-public:
-	Fruit();
-	virtual ~Fruit();
+class Fruit : public StaticObject{
+	
 };
-
-} /* namespace Fruit */
-
-#endif /* SRC_FRUIT_H_ */

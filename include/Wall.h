@@ -1,22 +1,7 @@
-/*
- * Wall.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_WALL_H_
-#define SRC_WALL_H_
+#include <StaticObject.h>
 
-namespace Wall {
-
-class Wall {
-public:
-	Wall();
-	virtual ~Wall();
+class Wall : public StaticObject{
+	
 };
-
-} /* namespace Wall */
-
-#endif /* SRC_WALL_H_ */

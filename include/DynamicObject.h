@@ -1,5 +1,7 @@
 #pragma once
 
+#include <VisibleObject.h>
+
 enum Direction{
 	up,
 	down,
@@ -7,6 +9,8 @@ enum Direction{
 	right
 };
 
-class DynamicObject : VisibleObject{
-	
+class DynamicObject : public VisibleObject {
+	public:
+		Direction 	dir;
+		int			speed;
 };

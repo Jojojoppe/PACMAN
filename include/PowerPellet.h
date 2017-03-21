@@ -1,22 +1,7 @@
-/*
- * PowerPellet.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_POWERPELLET_H_
-#define SRC_POWERPELLET_H_
+#include <StaticObject.h>
 
-namespace PowerPellet {
-
-class PowerPellet {
-public:
-	PowerPellet();
-	virtual ~PowerPellet();
+class PowerPellet : public StaticObject {
+	
 };
-
-} /* namespace PowerPellet */
-
-#endif /* SRC_POWERPELLET_H_ */

@@ -1,22 +1,7 @@
-/*
- * StaticObject.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_STATICOBJECT_H_
-#define SRC_STATICOBJECT_H_
+#include <VisibleObject.h>
 
-namespace StaticObject {
-
-class StaticObject {
-public:
-	StaticObject();
-	virtual ~StaticObject();
+class StaticObject : public VisibleObject {
+	
 };
-
-} /* namespace StaticObject */
-
-#endif /* SRC_STATICOBJECT_H_ */

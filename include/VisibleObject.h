@@ -1,22 +1,12 @@
-/*
- * VisibleObject.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_VISIBLEOBJECT_H_
-#define SRC_VISIBLEOBJECT_H_
+#include <Pos.h>
+#include <Sprite.h>
 
-namespace VisibleObject {
-
-class VisibleObject {
-public:
-	VisibleObject();
-	virtual ~VisibleObject();
+class VisibleObject{
+	public:
+		Pos		pos;
+		Sprite	sprite;
+		
+		virtual void draw();
 };
-
-} /* namespace VisibleObject */
-
-#endif /* SRC_VISIBLEOBJECT_H_ */

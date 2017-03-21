@@ -1,22 +1,7 @@
-/*
- * Door.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
+#pragma once
 
-#ifndef SRC_DOOR_H_
-#define SRC_DOOR_H_
+#include <StaticObject.h>
 
-namespace Door {
-
-class Door {
-public:
-	Door();
-	virtual ~Door();
+class Door : public StaticObject {
+	
 };
-
-} /* namespace Door */
-
-#endif /* SRC_DOOR_H_ */

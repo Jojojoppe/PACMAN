@@ -1,5 +1,7 @@
 #pragma once
 
+#include <DynamicObject.h>
+
 enum GhostType{
 	normal,
 	frightened,

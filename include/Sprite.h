@@ -1,22 +1,6 @@
-/*
- * Sprite.h
- *
- *  Created on: 21 mrt. 2017
- *      Author: Joppe Blondel & Hessel den Hertog
- Group[20]
- */
-
-#ifndef SRC_SPRITE_H_
-#define SRC_SPRITE_H_
-
-namespace Sprite {
+#pragma once
 
 class Sprite {
-public:
-	Sprite();
-	virtual ~Sprite();
+	public:
+		int 		sprite;		// ERROR: should be Game::ObjectType
 };
-
-} /* namespace Sprite */
-
-#endif /* SRC_SPRITE_H_ */
