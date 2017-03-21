@@ -261,7 +261,7 @@ void UI::drawBackground(std::vector<std::vector<int>> & map)
 			if(map[i][j]==1)
 			{
 				SDL_Rect dst = {j*24, i*24, 24,24};
-				SDL_RenderCopy(renderer, sheet, &clips[WALL][DOWN], &dst);
+				SDL_RenderCopy(renderer, sheet, &clips[WALL][UP], &dst);
 			}
 		}
 	}

@@ -1,0 +1,3 @@
+class InkyClyde : public Ghost{
+	
+};

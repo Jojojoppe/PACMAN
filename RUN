@@ -1,4 +1,4 @@
 #!/bin/bash
 
-g++ -o main src/main.cpp src/UI.cpp -Iinclude -lSDL2
+g++ -g -o main $(ls src/*.cpp | xargs) -Iinclude -lSDL2main -lSDL2
 ./main

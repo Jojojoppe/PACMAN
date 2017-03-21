@@ -1,0 +1,3 @@
+class Pacman : public DynamicObject{
+	
+};

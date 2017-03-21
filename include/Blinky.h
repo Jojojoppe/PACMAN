@@ -1,0 +1,3 @@
+class Blinky : public Ghost{
+	
+};
