@@ -4,27 +4,15 @@
 #include <map>
 
 #include <VisibleObject.h>
+#include <Sprite.h>
 #include <Pacman.h>
 #include <Score.h>
 
 #include <SDL2/SDL.h>
 
-enum ObjectType{
-	wall,
-	pacmanright
-};
-
-enum SpriteInfo{
-	x,
-	y,
-	sizex,
-	sizey
-};
-
 class Game{
 	
 	private:
-		std::vector<VisibleObject> 	field;
 		Score						score;
 		
 		// Graphic things
@@ -33,19 +21,21 @@ class Game{
 		SDL_Texture *				sheet;
 		
 		std::map<ObjectType,std::map<SpriteInfo,int>> spriteMap; 
+		std::map<int, ObjectType> mapToSprite;
 		
 		void loadSprites();	
+		
+		SDL_TimerID					timer;
 	
 	public:
 		Pacman						pacman;
+		std::vector<VisibleObject> 	field;
 		
-		SDL_TimerID					timer;
+		void refresh();
 		
 		void main();
 		void resetGame();
 		void newLevel();
-		
-		void refresh();
 };
 
 extern uint32_t refreshTimer(uint32_t interval, void * param);

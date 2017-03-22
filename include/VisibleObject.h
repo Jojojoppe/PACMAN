@@ -3,6 +3,12 @@
 #include <Pos.h>
 #include <Sprite.h>
 
+enum ObjectType{
+	null,
+	wall,
+	pacmanright
+};
+
 class VisibleObject{
 	public:
 		Pos		pos;

@@ -2,6 +2,6 @@
 
 #include <StaticObject.h>
 
-class Dot : StaticObject {
+class Dot : public StaticObject {
 	
 };
