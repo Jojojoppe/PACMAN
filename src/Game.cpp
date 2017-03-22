@@ -18,7 +18,7 @@ void Game::main(){
 	window = SDL_CreateWindow("Programming 2: PACMAN",
 							  SDL_WINDOWPOS_CENTERED,
 							  SDL_WINDOWPOS_CENTERED,
-							  24*28, 24*31+3*24,
+							  24*28, 24*31+1*24,
 							  SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	
@@ -46,12 +46,13 @@ void Game::main(){
 }
 
 void Game::resetGame(){
-	
+	score.reset();
 }
 
 void Game::newLevel(){
 	field.clear();
 	SDL_RemoveTimer(timer);
+	score.reset();
 	
 	// Create map
 	for(int i=0; i<map.size(); i++)
@@ -103,7 +104,7 @@ void Game::newLevel(){
 	pacman.pos.x = 14*24;
 	pacman.dir = right;
 	pacman.sprite.sprite = pacmanright;
-	pacman.speed = 2;
+	pacman.speed = 4;
 	
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
@@ -177,6 +178,33 @@ void Game::refresh(){
 	SDL_Rect dst = {pacman.pos.x, pacman.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_Rect src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_RenderCopy(renderer, sheet, &src, &dst);
+	
+	// Draw amount of lives
+	for(int i=0;i<score.lives;i++){
+		SDL_Rect dst = {2*24-i*24, 31*24, spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_RenderCopy(renderer, sheet, &src, &dst);
+	}
+	
+	// Draw fruitbonus
+	if(score.fruitbonus){
+		SDL_Rect dst = {4*24, 31*24, spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_RenderCopy(renderer, sheet, &src, &dst);
+	}
+	
+	// Draw score
+	int digitSelector = 1;
+	int digit = 0;
+	int value;
+	while(digitSelector < 100000){
+		SDL_Rect dst = {20*24-digit*24, 31*24, 24,24};
+		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		value = (score.score/digitSelector)%10;
+		SDL_RenderCopy(renderer, sheet, &src, &dst);
+		digitSelector *= 10;
+		digit++;
+	}
 	
 	SDL_RenderPresent(renderer);
 }

@@ -1,5 +1,11 @@
 #pragma once
 
-class Score {
-	
+class Score {		
+	public:
+		void 	reset();
+		
+		int		score;
+		int		lives;
+		int 	fruitbonus;
+		int 	level;
 };
