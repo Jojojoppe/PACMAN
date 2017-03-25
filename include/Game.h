@@ -29,7 +29,7 @@ class Game{
 	
 	public:
 		Pacman						pacman;
-		std::vector<VisibleObject> 	field;
+		std::vector<VisibleObject*> 	field;
 		
 		void refresh();
 		

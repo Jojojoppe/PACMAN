@@ -50,7 +50,11 @@ void Game::resetGame(){
 }
 
 void Game::newLevel(){
+	// Delete all objects
+	for(auto &i : field)
+		delete i;
 	field.clear();
+	
 	SDL_RemoveTimer(timer);
 	score.reset();
 	
@@ -59,42 +63,42 @@ void Game::newLevel(){
 		for(int j=0; j<map[i].size(); j++){
 			// Wall
 			if(map[i][j]>=10 && map[i][j]<=32){
-				Wall w;
-				w.pos.x = j*12;
-				w.pos.y = i*12;
-				w.sprite.sprite = mapToSprite[map[i][j]];
+				Wall * w = new Wall;
+				w->pos.x = j*12;
+				w->pos.y = i*12;
+				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
 			// Door
 			if(map[i][j]==33){
-				Door w;
-				w.pos.x = j*12;
-				w.pos.y = i*12;
-				w.sprite.sprite = mapToSprite[map[i][j]];
+				Door * w = new Door;
+				w->pos.x = j*12;
+				w->pos.y = i*12;
+				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
 			// Tunnel
 			if(map[i][j]==34){
-				Tunnel w;
-				w.pos.x = j*12;
-				w.pos.y = i*12;
-				w.sprite.sprite = mapToSprite[map[i][j]];
+				Tunnel * w = new Tunnel;
+				w->pos.x = j*12;
+				w->pos.y = i*12;
+				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
 			// PowerPellet
 			if(map[i][j]==2){
-				PowerPellet w;
-				w.pos.x = j*12;
-				w.pos.y = i*12;
-				w.sprite.sprite = mapToSprite[map[i][j]];
+				PowerPellet * w = new PowerPellet;
+				w->pos.x = j*12;
+				w->pos.y = i*12;
+				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
 			// Dot
 			if(map[i][j]==1){
-				Dot w;
-				w.pos.x = j*12;
-				w.pos.y = i*12;
-				w.sprite.sprite = mapToSprite[map[i][j]];
+				Dot * w = new Dot;
+				w->pos.x = j*12;
+				w->pos.y = i*12;
+				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
 		}
@@ -190,9 +194,9 @@ void Game::refresh(){
 	
 	// Draw all objects
 	for(auto &i : field){
-		i.draw();
-		SDL_Rect dst = {i.pos.x+i.sprite.pos.x, i.pos.y+i.sprite.pos.y, spriteMap[(ObjectType)i.sprite.sprite][sizex],spriteMap[(ObjectType)i.sprite.sprite][sizey]};
-		SDL_Rect src = {spriteMap[(ObjectType)i.sprite.sprite][x], spriteMap[(ObjectType)i.sprite.sprite][y], spriteMap[(ObjectType)i.sprite.sprite][sizex], spriteMap[(ObjectType)i.sprite.sprite][sizey]};
+		i->draw();
+		SDL_Rect dst = {i->pos.x+i->sprite.pos.x, i->pos.y+i->sprite.pos.y, spriteMap[(ObjectType)i->sprite.sprite][sizex],spriteMap[(ObjectType)i->sprite.sprite][sizey]};
+		SDL_Rect src = {spriteMap[(ObjectType)i->sprite.sprite][x], spriteMap[(ObjectType)i->sprite.sprite][y], spriteMap[(ObjectType)i->sprite.sprite][sizex], spriteMap[(ObjectType)i->sprite.sprite][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
 	
