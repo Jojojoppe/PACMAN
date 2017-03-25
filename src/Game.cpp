@@ -1,5 +1,5 @@
 #include <Game.h>
-#include <maps.h>		// bitmaps
+#include <maps.h>
 
 // StaticObjects
 #include <Wall.h>
@@ -30,7 +30,6 @@ void Game::main(){
 	loadSprites();
 	
 	resetGame();
-	newLevel();
 	
 	bool quit = false;
 	SDL_Event e;
@@ -47,6 +46,7 @@ void Game::main(){
 
 void Game::resetGame(){
 	score.reset();
+	newLevel();
 }
 
 void Game::newLevel(){
@@ -100,10 +100,12 @@ void Game::newLevel(){
 		}
 	
 	// Add pacman
-	pacman.pos.y = 22*12+6;
-	pacman.pos.x = 13*12+6;
+	pacman.pos.y = 23*12;
+	pacman.pos.x = 14*12;
 	pacman.dir = right;
 	pacman.sprite.sprite = pacmanright;
+	pacman.sprite.pos.x = -6;
+	pacman.sprite.pos.y = -6;
 	pacman.speed = 0;
 	
 	refresh();
@@ -189,14 +191,14 @@ void Game::refresh(){
 	// Draw all objects
 	for(auto &i : field){
 		i.draw();
-		SDL_Rect dst = {i.pos.x, i.pos.y, spriteMap[(ObjectType)i.sprite.sprite][sizex],spriteMap[(ObjectType)i.sprite.sprite][sizey]};
+		SDL_Rect dst = {i.pos.x+i.sprite.pos.x, i.pos.y+i.sprite.pos.y, spriteMap[(ObjectType)i.sprite.sprite][sizex],spriteMap[(ObjectType)i.sprite.sprite][sizey]};
 		SDL_Rect src = {spriteMap[(ObjectType)i.sprite.sprite][x], spriteMap[(ObjectType)i.sprite.sprite][y], spriteMap[(ObjectType)i.sprite.sprite][sizex], spriteMap[(ObjectType)i.sprite.sprite][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
 	
 	// Draw pacman
 	pacman.draw();
-	SDL_Rect dst = {pacman.pos.x, pacman.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
+	SDL_Rect dst = {pacman.pos.x+pacman.sprite.pos.x, pacman.pos.y+pacman.sprite.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_Rect src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_RenderCopy(renderer, sheet, &src, &dst);
 	
@@ -229,3 +231,4 @@ void Game::refresh(){
 	
 	SDL_RenderPresent(renderer);
 }
+
