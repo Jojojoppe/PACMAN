@@ -50,6 +50,7 @@ void Game::resetGame(){
 }
 
 void Game::newLevel(){
+	
 	// Delete all objects
 	for(auto &i : field)
 		delete i;
@@ -151,8 +152,8 @@ void Game::loadSprites(){
 	
 	// Map map content to objectTypes
 	mapToSprite[0] = null;
-	mapToSprite[1] = dot;		// dot
-	mapToSprite[2] = pellet;		// power pellet
+	mapToSprite[1] = dot;
+	mapToSprite[2] = pellet;
 	mapToSprite[10] = wall;
 	mapToSprite[11] = wall;
 	mapToSprite[12] = wall;
@@ -176,23 +177,27 @@ void Game::loadSprites(){
 	mapToSprite[30] = wall;
 	mapToSprite[31] = wall;
 	mapToSprite[32] = wall;	
-	mapToSprite[33] = door;		// door
-	mapToSprite[34] = null;		// tunnel
-}
-
-uint32_t refreshTimer(uint32_t interval, void * param){
-	((Game*)param)->refresh();
-	return interval;
+	mapToSprite[33] = door;
+	mapToSprite[34] = null;
+	
+	// Map numbers to ObjectTypes
+	numToSprite[0] = pacmanright;
+	numToSprite[1] = pacmanright;
+	numToSprite[2] = pacmanright;
+	numToSprite[3] = pacmanright;
+	numToSprite[4] = pacmanright;
+	numToSprite[5] = pacmanright;
+	numToSprite[6] = pacmanright;
+	numToSprite[7] = pacmanright;
+	numToSprite[8] = pacmanright;
+	numToSprite[9] = pacmanright;
 }
 
 void Game::refresh(){
 	
-	// Test movement
-	pacman.pos.x -= pacman.speed;
-	
 	SDL_RenderClear(renderer);
 	
-	// Draw all objects
+	// Draw all objects in field
 	for(auto &i : field){
 		i->draw();
 		SDL_Rect dst = {i->pos.x+i->sprite.pos.x, i->pos.y+i->sprite.pos.y, spriteMap[(ObjectType)i->sprite.sprite][sizex],spriteMap[(ObjectType)i->sprite.sprite][sizey]};
@@ -206,6 +211,12 @@ void Game::refresh(){
 	SDL_Rect src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_RenderCopy(renderer, sheet, &src, &dst);
 	
+	drawScore();
+	
+	SDL_RenderPresent(renderer);
+}
+
+void Game::drawScore(){
 	// Draw amount of lives
 	for(int i=0;i<score.lives;i++){
 		SDL_Rect dst = {2*24-i*24, 31*12, spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
@@ -225,14 +236,17 @@ void Game::refresh(){
 	int digit = 0;
 	int value;
 	while(digitSelector < 100000){
-		SDL_Rect dst = {13*24-digit*24, 31*12, 24,24};
-		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
 		value = (score.score/digitSelector)%10;
+		SDL_Rect dst = {13*24-digit*24, 31*12, 24,24};
+		SDL_Rect src = {spriteMap[numToSprite[value]][x], spriteMap[numToSprite[value]][y], spriteMap[numToSprite[value]][sizex], spriteMap[numToSprite[value]][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 		digitSelector *= 10;
 		digit++;
 	}
-	
-	SDL_RenderPresent(renderer);
+}
+
+uint32_t refreshTimer(uint32_t interval, void * param){
+	((Game*)param)->refresh();
+	return interval;
 }
 

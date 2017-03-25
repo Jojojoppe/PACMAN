@@ -20,10 +20,14 @@ class Game{
 		SDL_Renderer *				renderer;
 		SDL_Texture *				sheet;
 		
+		// Sprite mappings -> thinking: outisde or inside class
 		std::map<ObjectType,std::map<SpriteInfo,int>> spriteMap; 
 		std::map<int, ObjectType> mapToSprite;
+		std::map<int, ObjectType> numToSprite;
 		
 		void loadSprites();	
+		
+		void drawScore();
 		
 		SDL_TimerID					timer;
 	
