@@ -6,7 +6,11 @@
 enum ObjectType{
 	null,
 	wall,
-	pacmanright
+	pacmanright,
+	dot,
+	pellet,
+	pelletbig,
+	door
 };
 
 class VisibleObject{
