@@ -150,6 +150,237 @@ void Game::loadSprites(){
 	spriteMap[door][sizex] = 12;
 	spriteMap[door][sizey] = 12;
 	
+	// All wall types
+	spriteMap[wall1][x] = 4+16*12;
+	spriteMap[wall1][y] = 4+6*12;
+	spriteMap[wall1][sizex] = 12;
+	spriteMap[wall1][sizey] = 12;
+	
+	spriteMap[wall2][x] = 4+17*12;
+	spriteMap[wall2][y] = 4+6*12;
+	spriteMap[wall2][sizex] = 12;
+	spriteMap[wall2][sizey] = 12;
+	
+	spriteMap[wall3][x] = 4+18*12;
+	spriteMap[wall3][y] = 4+6*12;
+	spriteMap[wall3][sizex] = 12;
+	spriteMap[wall3][sizey] = 12;
+	
+	spriteMap[wall4][x] = 4+19*12;
+	spriteMap[wall4][y] = 4+6*12;
+	spriteMap[wall4][sizex] = 12;
+	spriteMap[wall4][sizey] = 12;
+	
+	spriteMap[wall5][x] = 4+20*12;
+	spriteMap[wall5][y] = 4+6*12;
+	spriteMap[wall5][sizex] = 12;
+	spriteMap[wall5][sizey] = 12;
+
+	spriteMap[wall6][x] = 4+21*12;
+	spriteMap[wall6][y] = 4+6*12;
+	spriteMap[wall6][sizex] = 12;
+	spriteMap[wall6][sizey] = 12;
+
+	spriteMap[wall7][x] = 4+22*12;
+	spriteMap[wall7][y] = 4+6*12;
+	spriteMap[wall7][sizex] = 12;
+	spriteMap[wall7][sizey] = 12;
+
+	spriteMap[wall8][x] = 4+23*12;
+	spriteMap[wall8][y] = 4+6*12;
+	spriteMap[wall8][sizex] = 12;
+	spriteMap[wall8][sizey] = 12;
+
+	spriteMap[wall9][x] = 4+24*12;
+	spriteMap[wall9][y] = 4+6*12;
+	spriteMap[wall9][sizex] = 12;
+	spriteMap[wall9][sizey] = 12;
+
+	spriteMap[wall10][x] = 4+25*12;
+	spriteMap[wall10][y] = 4+6*12;
+	spriteMap[wall10][sizex] = 12;
+	spriteMap[wall10][sizey] = 12;
+
+	spriteMap[wall11][x] = 4+26*12;
+	spriteMap[wall11][y] = 4+6*12;
+	spriteMap[wall11][sizex] = 12;
+	spriteMap[wall11][sizey] = 12;
+
+	spriteMap[wall12][x] = 4+27*12;
+	spriteMap[wall12][y] = 4+6*12;
+	spriteMap[wall12][sizex] = 12;
+	spriteMap[wall12][sizey] = 12;
+
+	spriteMap[wall13][x] = 4+28*12;
+	spriteMap[wall13][y] = 4+6*12;
+	spriteMap[wall13][sizex] = 12;
+	spriteMap[wall13][sizey] = 12;
+
+	spriteMap[wall14][x] = 4+29*12;
+	spriteMap[wall14][y] = 4+6*12;
+	spriteMap[wall14][sizex] = 12;
+	spriteMap[wall14][sizey] = 12;
+
+	spriteMap[wall15][x] = 4+30*12;
+	spriteMap[wall15][y] = 4+6*12;
+	spriteMap[wall15][sizex] = 12;
+	spriteMap[wall15][sizey] = 12;
+
+	spriteMap[wall16][x] = 4+31*12;
+	spriteMap[wall16][y] = 4+6*12;
+	spriteMap[wall16][sizex] = 12;
+	spriteMap[wall16][sizey] = 12;
+	
+	spriteMap[wall17][x] = 4+0*12;
+	spriteMap[wall17][y] = 4+7*12;
+	spriteMap[wall17][sizex] = 12;
+	spriteMap[wall17][sizey] = 12;
+
+	spriteMap[wall18][x] = 4+1*12;
+	spriteMap[wall18][y] = 4+7*12;
+	spriteMap[wall18][sizex] = 12;
+	spriteMap[wall18][sizey] = 12;
+
+	spriteMap[wall19][x] = 4+2*12;
+	spriteMap[wall19][y] = 4+7*12;
+	spriteMap[wall19][sizex] = 12;
+	spriteMap[wall19][sizey] = 12;
+
+	spriteMap[wall20][x] = 4+3*12;
+	spriteMap[wall20][y] = 4+7*12;
+	spriteMap[wall20][sizex] = 12;
+	spriteMap[wall20][sizey] = 12;
+
+	spriteMap[wall21][x] = 4+4*12;
+	spriteMap[wall21][y] = 4+7*12;
+	spriteMap[wall21][sizex] = 12;
+	spriteMap[wall21][sizey] = 12;
+
+	spriteMap[wall22][x] = 4+5*12;
+	spriteMap[wall22][y] = 4+7*12;
+	spriteMap[wall22][sizex] = 12;
+	spriteMap[wall22][sizey] = 12;
+
+	spriteMap[wall23][x] = 4+6*12;
+	spriteMap[wall23][y] = 4+7*12;
+	spriteMap[wall23][sizex] = 12;
+	spriteMap[wall23][sizey] = 12;
+
+	spriteMap[wall24][x] = 4+7*12;
+	spriteMap[wall24][y] = 4+7*12;
+	spriteMap[wall24][sizex] = 12;
+	spriteMap[wall24][sizey] = 12;
+
+	spriteMap[wall25][x] = 4+8*12;
+	spriteMap[wall25][y] = 4+7*12;
+	spriteMap[wall25][sizex] = 12;
+	spriteMap[wall25][sizey] = 12;
+
+	spriteMap[wall26][x] = 4+9*12;
+	spriteMap[wall26][y] = 4+7*12;
+	spriteMap[wall26][sizex] = 12;
+	spriteMap[wall26][sizey] = 12;
+
+	spriteMap[wall27][x] = 4+10*12;
+	spriteMap[wall27][y] = 4+7*12;
+	spriteMap[wall27][sizex] = 12;
+	spriteMap[wall27][sizey] = 12;
+
+	spriteMap[wall28][x] = 4+11*12;
+	spriteMap[wall28][y] = 4+7*12;
+	spriteMap[wall28][sizex] = 12;
+	spriteMap[wall28][sizey] = 12;
+
+	spriteMap[wall29][x] = 4+12*12;
+	spriteMap[wall29][y] = 4+7*12;
+	spriteMap[wall29][sizex] = 12;
+	spriteMap[wall29][sizey] = 12;
+
+	spriteMap[wall30][x] = 4+13*12;
+	spriteMap[wall30][y] = 4+7*12;
+	spriteMap[wall30][sizex] = 12;
+	spriteMap[wall30][sizey] = 12;
+
+	spriteMap[wall31][x] = 4+14*12;
+	spriteMap[wall31][y] = 4+7*12;
+	spriteMap[wall31][sizex] = 12;
+	spriteMap[wall31][sizey] = 12;
+
+	spriteMap[wall32][x] = 4+15*12;
+	spriteMap[wall32][y] = 4+7*12;
+	spriteMap[wall32][sizex] = 12;
+	spriteMap[wall32][sizey] = 12;
+
+	spriteMap[wall33][x] = 4+16*12;
+	spriteMap[wall33][y] = 4+7*12;
+	spriteMap[wall33][sizex] = 12;
+	spriteMap[wall33][sizey] = 12;
+
+	spriteMap[wall34][x] = 4+17*12;
+	spriteMap[wall34][y] = 4+7*12;
+	spriteMap[wall34][sizex] = 12;
+	spriteMap[wall34][sizey] = 12;
+
+	spriteMap[wall35][x] = 4+18*12;
+	spriteMap[wall35][y] = 4+7*12;
+	spriteMap[wall35][sizex] = 12;
+	spriteMap[wall35][sizey] = 12;
+
+	spriteMap[wall36][x] = 4+19*12;
+	spriteMap[wall36][y] = 4+7*12;
+	spriteMap[wall36][sizex] = 12;
+	spriteMap[wall36][sizey] = 12;
+
+	spriteMap[wall37][x] = 4+20*12;
+	spriteMap[wall37][y] = 4+7*12;
+	spriteMap[wall37][sizex] = 12;
+	spriteMap[wall37][sizey] = 12;
+
+	spriteMap[wall38][x] = 4+21*12;
+	spriteMap[wall38][y] = 4+7*12;
+	spriteMap[wall38][sizex] = 12;
+	spriteMap[wall38][sizey] = 12;
+
+	spriteMap[wall39][x] = 4+22*12;
+	spriteMap[wall39][y] = 4+7*12;
+	spriteMap[wall39][sizex] = 12;
+	spriteMap[wall39][sizey] = 12;
+
+	spriteMap[wall40][x] = 4+23*12;
+	spriteMap[wall40][y] = 4+7*12;
+	spriteMap[wall40][sizex] = 12;
+	spriteMap[wall40][sizey] = 12;
+
+	spriteMap[wall41][x] = 4+24*12;
+	spriteMap[wall41][y] = 4+7*12;
+	spriteMap[wall41][sizex] = 12;
+	spriteMap[wall41][sizey] = 12;
+
+	spriteMap[wall42][x] = 4+25*12;
+	spriteMap[wall42][y] = 4+7*12;
+	spriteMap[wall42][sizex] = 12;
+	spriteMap[wall42][sizey] = 12;
+
+	spriteMap[wall43][x] = 4+26*12;
+	spriteMap[wall43][y] = 4+7*12;
+	spriteMap[wall43][sizex] = 12;
+	spriteMap[wall43][sizey] = 12;
+
+	spriteMap[wall44][x] = 4+27*12;
+	spriteMap[wall44][y] = 4+7*12;
+	spriteMap[wall44][sizex] = 12;
+	spriteMap[wall44][sizey] = 12;
+
+	spriteMap[wall45][x] = 4+28*12;
+	spriteMap[wall45][y] = 4+7*12;
+	spriteMap[wall45][sizex] = 12;
+	spriteMap[wall45][sizey] = 12;
+
+	spriteMap[wall46][x] = 4+29*12;
+	spriteMap[wall46][y] = 4+7*12;
+	spriteMap[wall46][sizex] = 12;
+	spriteMap[wall46][sizey] = 12;
+	
 	// Map map content to objectTypes
 	mapToSprite[0] = null;
 	mapToSprite[1] = dot;
