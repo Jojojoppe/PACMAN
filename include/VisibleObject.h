@@ -5,8 +5,8 @@
 
 enum ObjectType{
 	null,
-	wall,
-	pacmanright,
+
+	// Specials
 	dot,
 	pellet,
 	pelletbig,
@@ -70,8 +70,74 @@ enum ObjectType{
 	num6,
 	num7,
 	num8,
-	num9
+	num9,
+
+	// Ghosts
+	PinkyRight1,
+	PinkyRight2,
+	PinkyDown1,
+	PinkyDown2,
+	PinkyLeft1,
+	PinkyLeft2,
+	PinkyUp1,
+	PinkyUp2,
+	InkyRight1,
+	InkyRight2,
+	InkyDown1,
+	InkyDown2,
+	InkyLeft1,
+	InkyLeft2,
+	InkyUp1,
+	InkyUp2,
+	ClydeRight1,
+	ClydeRight2,
+	ClydeDown1,
+	ClydeDown2,
+	ClydeUp1,
+	ClydeUp2,
+	ClydeLeft1,
+	ClydeLeft2,
+	BlinkyRight1,
+	BlinkyRight2,
+	BlinkyDown1,
+	BlinkyDown2,
+	BlinkyLeft1,
+	BlinkyLeft2,
+	BlinkyUp1,
+	BlinkyUp2,
+	GhostDead1,
+	GhostDead2,
+	GhostAlmostDead1,
+	GhostAlmostDead2,
 	
+	// Scores
+	Score200,	
+	Score400,	
+	Score800,	
+	Score1600,	
+	
+	// Pacman
+	PacmanEatFull,
+	PacmanEatRight1,
+	PacmanEatRight2,
+	PacmanEatDown1,
+	PacmanEatDown2,
+	PacmanEatUp1,
+	PacmanEatUp2,
+	PacmanEatLeft1,
+	PacmanEatLeft2,
+	PacmanDyingS1,
+	PacmanDyingS2,
+	PacmanDyingS3,
+	PacmanDyingS4,
+	PacmanDyingS5,
+	PacmanDyingS6,
+	PacmanDyingS7,
+	PacmanDyingS8,
+	PacmanDyingS9,
+	PacmanDyingS10,
+	PacmanDyingS11,
+	PacmanDyingS12
 };
 
 class VisibleObject{

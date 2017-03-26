@@ -18,7 +18,7 @@ void Game::main(){
 	window = SDL_CreateWindow("Programming 2: PACMAN",
 							  SDL_WINDOWPOS_CENTERED,
 							  SDL_WINDOWPOS_CENTERED,
-							  12*28+2, 12*31+1*24+2,
+							  12*28+2, 12*31+1*24+4,
 							  SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	
@@ -108,7 +108,7 @@ void Game::newLevel(){
 	pacman.pos.y = 23*12;
 	pacman.pos.x = 14*12;
 	pacman.dir = right;
-	pacman.sprite.sprite = pacmanright;
+	pacman.sprite.sprite = PacmanEatRight1;
 	pacman.sprite.pos.x = -6;
 	pacman.sprite.pos.y = -6;
 	pacman.speed = 0;
@@ -120,11 +120,388 @@ void Game::newLevel(){
 
 void Game::loadSprites(){
 	
-	spriteMap[pacmanright][x] = 4+0*24;
-	spriteMap[pacmanright][y] = 5+11*24;
-	spriteMap[pacmanright][sizex] = 24;
-	spriteMap[pacmanright][sizey] = 24;
+	//------------
+	// Ghosts
+	//------------
+
+	//PinkyRight1
+	spriteMap[PinkyRight1][x] = 4 + 0*24;
+	spriteMap[PinkyRight1][y] = 4 + 9*24;
+	spriteMap[PinkyRight1][sizex] = 24;
+	spriteMap[PinkyRight1][sizey] = 24;
+
+	//PinkyRight2
+	spriteMap[PinkyRight2][x] = 4 + 1*24;
+	spriteMap[PinkyRight2][y] = 4 + 9*24;
+	spriteMap[PinkyRight2][sizex] = 24;
+	spriteMap[PinkyRight2][sizey] = 24;
+
+	//PinkyDown1
+	spriteMap[PinkyDown1][x] = 4 + 2*24;
+	spriteMap[PinkyDown1][y] = 4 + 9*24;
+	spriteMap[PinkyDown1][sizex] = 24;
+	spriteMap[PinkyDown1][sizey] = 24;
+
+	//PinkyDown2
+	spriteMap[PinkyDown2][x] = 4 + 3*24;
+	spriteMap[PinkyDown2][y] = 4 + 9*24;
+	spriteMap[PinkyDown2][sizex] = 24;
+	spriteMap[PinkyDown2][sizey] = 24;
+
+	//PinkyLeft1
+	spriteMap[PinkyLeft1][x] = 4 + 4*24;
+	spriteMap[PinkyLeft1][y] = 4 + 9*24;
+	spriteMap[PinkyLeft1][sizex] = 24;
+	spriteMap[PinkyLeft1][sizey] = 24;
+
+	//PinkyLeft2
+	spriteMap[PinkyLeft2][x] = 4 + 5*24;
+	spriteMap[PinkyLeft2][y] = 4 + 9*24;
+	spriteMap[PinkyLeft2][sizex] = 24;
+	spriteMap[PinkyLeft2][sizey] = 24;
+
+	//PinkyUp1
+	spriteMap[PinkyUp1][x] = 4 + 6*24;
+	spriteMap[PinkyUp1][y] = 4 + 9*24;
+	spriteMap[PinkyUp1][sizex] = 24;
+	spriteMap[PinkyUp1][sizey] = 24;
+
+	//PinkyUp2
+	spriteMap[PinkyUp2][x] = 4 + 7*24;
+	spriteMap[PinkyUp2][y] = 4 + 9*24;
+	spriteMap[PinkyUp2][sizex] = 24;
+	spriteMap[PinkyUp2][sizey] = 24;
+	//----------------------------------------------------
+	//InkyRight1
+	spriteMap[InkyRight1][x] = 4 + 8*24;
+	spriteMap[InkyRight1][y] = 4 + 9*24;
+	spriteMap[InkyRight1][sizex] = 24;
+	spriteMap[InkyRight1][sizey] = 24;
+
+	//InkyRight2
+	spriteMap[InkyRight2][x] = 4 + 9*24;
+	spriteMap[InkyRight2][y] = 4 + 9*24;
+	spriteMap[InkyRight2][sizex] = 24;
+	spriteMap[InkyRight2][sizey] = 24;
+
+	//InkyDown1
+	spriteMap[InkyDown1][x] = 4 + 10*24;
+	spriteMap[InkyDown1][y] = 4 + 9*24;
+	spriteMap[InkyDown1][sizex] = 24;
+	spriteMap[InkyDown1][sizey] = 24;
+
+	//InkyDown2
+	spriteMap[InkyDown2][x] = 4 + 11*24;
+	spriteMap[InkyDown2][y] = 4 + 9*24;
+	spriteMap[InkyDown2][sizex] = 24;
+	spriteMap[InkyDown2][sizey] = 24;
+
+	//InkyLeft1
+	spriteMap[InkyLeft1][x] = 4 + 12*24;
+	spriteMap[InkyLeft1][y] = 4 + 9*24;
+	spriteMap[InkyLeft1][sizex] = 24;
+	spriteMap[InkyLeft1][sizey] = 24;
+
+	//InkyLeft2
+	spriteMap[InkyLeft2][x] = 4 + 13*24;
+	spriteMap[InkyLeft2][y] = 4 + 9*24;
+	spriteMap[InkyLeft2][sizex] = 24;
+	spriteMap[InkyLeft2][sizey] = 24;
+
+	//InkyUp1
+	spriteMap[InkyUp1][x] = 4 + 14*24;
+	spriteMap[InkyUp1][y] = 4 + 9*24;
+	spriteMap[InkyUp1][sizex] = 24;
+	spriteMap[InkyUp1][sizey] = 24;
+
+	//InkyUp2
+	spriteMap[InkyUp2][x] = 4 + 15*24;
+	spriteMap[InkyUp2][y] = 4 + 9*24;
+	spriteMap[InkyUp2][sizex] = 24;
+	spriteMap[InkyUp2][sizey] = 24;
+	//---------------------------------------------
+
+	//ClydeRight1
+	spriteMap[ClydeRight1][x] = 4 + 0*24;
+	spriteMap[ClydeRight1][y] = 4 + 10*24;
+	spriteMap[ClydeRight1][sizex] = 24;
+	spriteMap[ClydeRight1][sizey] = 24;
+
+	//PClydeRight2
+	spriteMap[ClydeRight2][x] = 4 + 1*24;
+	spriteMap[ClydeRight2][y] = 4 + 10*24;
+	spriteMap[ClydeRight2][sizex] = 24;
+	spriteMap[ClydeRight2][sizey] = 24;
+
+	//ClydeDown1
+	spriteMap[ClydeDown1][x] = 4 + 2*24;
+	spriteMap[ClydeDown1][y] = 4 + 10*24;
+	spriteMap[ClydeDown1][sizex] = 24;
+	spriteMap[ClydeDown1][sizey] = 24;
+
+	//ClydeDown2
+	spriteMap[ClydeDown2][x] = 4 + 3*24;
+	spriteMap[ClydeDown2][y] = 4 + 10*24;
+	spriteMap[ClydeDown2][sizex] = 24;
+	spriteMap[ClydeDown2][sizey] = 24;
+
+	//ClydeLeft1
+	spriteMap[ClydeLeft1][x] = 4 + 4*24;
+	spriteMap[ClydeLeft1][y] = 4 + 10*24;
+	spriteMap[ClydeLeft1][sizex] = 24;
+	spriteMap[ClydeLeft1][sizey] = 24;
+
+	//ClydeLeft2
+	spriteMap[ClydeLeft2][x] = 4 + 5*24;
+	spriteMap[ClydeLeft2][y] = 4 + 10*24;
+	spriteMap[ClydeLeft2][sizex] = 24;
+	spriteMap[ClydeLeft2][sizey] = 24;
+
+	//ClydeUp1
+	spriteMap[ClydeUp1][x] = 4 + 6*24;
+	spriteMap[ClydeUp1][y] = 4 + 10*24;
+	spriteMap[ClydeUp1][sizex] = 24;
+	spriteMap[ClydeUp1][sizey] = 24;
+
+	//ClydeUp2
+	spriteMap[ClydeUp2][x] = 4 + 7*24;
+	spriteMap[ClydeUp2][y] = 4 + 10*24;
+	spriteMap[ClydeUp2][sizex] = 24;
+	spriteMap[ClydeUp2][sizey] = 24;
+	//------------------------------------------------------
+	//BlinkyRight1
+	spriteMap[BlinkyRight1][x] = 4 + 0*24;
+	spriteMap[BlinkyRight1][y] = 4 + 7*24;
+	spriteMap[BlinkyRight1][sizex] = 24;
+	spriteMap[BlinkyRight1][sizey] = 24;
+
+	//PBlinkyRight2
+	spriteMap[BlinkyRight2][x] = 4 + 1*24;
+	spriteMap[BlinkyRight2][y] = 4 + 7*24;
+	spriteMap[BlinkyRight2][sizex] = 24;
+	spriteMap[BlinkyRight2][sizey] = 24;
+
+	//BlinkyDown1
+	spriteMap[BlinkyDown1][x] = 4 + 2*24;
+	spriteMap[BlinkyDown1][y] = 4 + 7*24;
+	spriteMap[BlinkyDown1][sizex] = 24;
+	spriteMap[BlinkyDown1][sizey] = 24;
+
+	//BlinkyDown2
+	spriteMap[BlinkyDown2][x] = 4 + 3*24;
+	spriteMap[BlinkyDown2][y] = 4 + 7*24;
+	spriteMap[BlinkyDown2][sizex] = 24;
+	spriteMap[BlinkyDown2][sizey] = 24;
+
+	//BlinkyLeft1
+	spriteMap[BlinkyLeft1][x] = 4 + 4*24;
+	spriteMap[BlinkyLeft1][y] = 4 + 7*24;
+	spriteMap[BlinkyLeft1][sizex] = 24;
+	spriteMap[BlinkyLeft1][sizey] = 24;
+
+	//BlinkyLeft2
+	spriteMap[BlinkyLeft2][x] = 4 + 5*24;
+	spriteMap[BlinkyLeft2][y] = 4 + 7*24;
+	spriteMap[BlinkyLeft2][sizex] = 24;
+	spriteMap[BlinkyLeft2][sizey] = 24;
+
+	//BlinkyUp1
+	spriteMap[BlinkyUp1][x] = 4 + 6*24;
+	spriteMap[BlinkyUp1][y] = 4 + 7*24;
+	spriteMap[BlinkyUp1][sizex] = 24;
+	spriteMap[BlinkyUp1][sizey] = 24;
+
+	//BlinkyUp2
+	spriteMap[BlinkyUp2][x] = 4 + 7*24;
+	spriteMap[BlinkyUp2][y] = 4 + 7*24;
+	spriteMap[BlinkyUp2][sizex] = 24;
+	spriteMap[BlinkyUp2][sizey] = 24;
+	//-----------------------------------------------------
+
+	//GhostDead1
+	spriteMap[GhostDead1][x] = 4 + 12*24;
+	spriteMap[GhostDead1][y] = 4 + 6*24;
+	spriteMap[GhostDead1][sizex] = 24;
+	spriteMap[GhostDead1][sizey] = 24;
+
+	//GhostDead2
+	spriteMap[GhostDead2][x] = 4 + 13*24;
+	spriteMap[GhostDead2][y] = 4 + 6*24;
+	spriteMap[GhostDead2][sizex] = 24;
+	spriteMap[GhostDead2][sizey] = 24;
+	 
+	//GhostAlmostDead1
+	spriteMap[GhostAlmostDead1][x] = 4 + 4*24;
+	spriteMap[GhostAlmostDead1][y] = 4 + 11*24;
+	spriteMap[GhostAlmostDead1][sizex] = 24;
+	spriteMap[GhostAlmostDead1][sizey] = 24;
+
+	//GhostAlmostDead2
+	spriteMap[GhostAlmostDead2][x] = 4 + 5*24;
+	spriteMap[GhostAlmostDead2][y] = 4 + 11*24;
+	spriteMap[GhostAlmostDead2][sizex] = 24;
+	spriteMap[GhostAlmostDead2][sizey] = 24;
+
+	//-----------
+	//Scores
+	//-----------
+	//Score200
+	spriteMap[Score200][x] = 4 + 8*24;
+	spriteMap[Score200][y] = 4 + 7*24;
+	spriteMap[Score200][sizex] = 24;
+	spriteMap[Score200][sizey] = 24;
+
+	//Score400
+	spriteMap[Score400][x] = 4 + 9*24;
+	spriteMap[Score400][y] = 4 + 7*24;
+	spriteMap[Score400][sizex] = 24;
+	spriteMap[Score400][sizey] = 24;
+
+	//Score800
+	spriteMap[Score800][x] = 4 + 10*24;
+	spriteMap[Score800][y] = 4 + 7*24;
+	spriteMap[Score800][sizex] = 24;
+	spriteMap[Score800][sizey] = 24;
+
+	//Score1600
+	spriteMap[Score1600][x] = 4 + 11*24;
+	spriteMap[Score1600][y] = 4 + 7*24;
+	spriteMap[Score1600][sizex] = 24;
+	spriteMap[Score1600][sizey] = 24;
+
+	//----------------------
+	//Pacman eating
+	//----------------------
+	//PacmanEatFull
+	spriteMap[PacmanEatFull][x] = 4 + 0*24;
+	spriteMap[PacmanEatFull][y] = 4 + 8*24;
+	spriteMap[PacmanEatFull][sizex] = 24;
+	spriteMap[PacmanEatFull][sizey] = 24;
+
+	//PacmanEatRight1
+	spriteMap[PacmanEatRight1][x] = 4 + 12*24;
+	spriteMap[PacmanEatRight1][y] = 4 + 7*24;
+	spriteMap[PacmanEatRight1][sizex] = 24;
+	spriteMap[PacmanEatRight1][sizey] = 24;
+
+	//PacmanEatRight2
+	spriteMap[PacmanEatRight2][x] = 4 + 14*24;
+	spriteMap[PacmanEatRight2][y] = 4 + 7*24;
+	spriteMap[PacmanEatRight2][sizex] = 24;
+	spriteMap[PacmanEatRight2][sizey] = 24;
+
+	//PacmanEatDown1
+	spriteMap[PacmanEatDown1][x] = 4 + 13*24;
+	spriteMap[PacmanEatDown1][y] = 4 + 7*24;
+	spriteMap[PacmanEatDown1][sizex] = 24;
+	spriteMap[PacmanEatDown1][sizey] = 24;
+
+	//PacmanEatDown2
+	spriteMap[PacmanEatDown2][x] = 4 + 15*24;
+	spriteMap[PacmanEatDown2][y] = 4 + 7*24;
+	spriteMap[PacmanEatDown2][sizex] = 24;
+	spriteMap[PacmanEatDown2][sizey] = 24;
+
+	//PacmanEatLeft1
+	spriteMap[PacmanEatLeft1][x] = 4 + 0*24;
+	spriteMap[PacmanEatLeft1][y] = 4 + 11*24;
+	spriteMap[PacmanEatLeft1][sizex] = 24;
+	spriteMap[PacmanEatLeft1][sizey] = 24;
+
+	//PacmanEatLeft2
+	spriteMap[PacmanEatLeft2][x] = 4 + 2*24;
+	spriteMap[PacmanEatLeft2][y] = 4 + 11*24;
+	spriteMap[PacmanEatLeft2][sizex] = 24;
+	spriteMap[PacmanEatLeft2][sizey] = 24;
+
+	//PacmanEatUp1
+	spriteMap[PacmanEatUp1][x] = 4 + 1*24;
+	spriteMap[PacmanEatUp1][y] = 4 + 11*24;
+	spriteMap[PacmanEatUp1][sizex] = 24;
+	spriteMap[PacmanEatUp1][sizey] = 24;
+
+	//PacmanEatUp2
+	spriteMap[PacmanEatUp2][x] = 4 + 3*24;
+	spriteMap[PacmanEatUp2][y] = 4 + 11*24;
+	spriteMap[PacmanEatUp2][sizex] = 24;
+	spriteMap[PacmanEatUp2][sizey] = 24;
+
+	//---------------------------
+	//PacmanDying
+	//---------------------------
+	//PacmanDyingS1
+	spriteMap[PacmanDyingS1][x] = 4 + 1*24;
+	spriteMap[PacmanDyingS1][y] = 4 + 11*24;
+	spriteMap[PacmanDyingS1][sizex] = 24;
+	spriteMap[PacmanDyingS1][sizey] = 24;
+
+	//PacmanDyingS2
+	spriteMap[PacmanDyingS2][x] = 4 + 4*24;
+	spriteMap[PacmanDyingS2][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS2][sizex] = 24;
+	spriteMap[PacmanDyingS2][sizey] = 24;
+
+	//PacmanDyingS3
+	spriteMap[PacmanDyingS3][x] = 4 + 5*24;
+	spriteMap[PacmanDyingS3][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS3][sizex] = 24;
+	spriteMap[PacmanDyingS3][sizey] = 24;
+
+	//PacmanDyingS4
+	spriteMap[PacmanDyingS4][x] = 4 + 6*24;
+	spriteMap[PacmanDyingS4][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS4][sizex] = 24;
+	spriteMap[PacmanDyingS4][sizey] = 24;
+
+	//PacmanDyingS5
+	spriteMap[PacmanDyingS5][x] = 4 + 7*24;
+	spriteMap[PacmanDyingS5][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS5][sizex] = 24;
+	spriteMap[PacmanDyingS5][sizey] = 24;
+
+	//PacmanDyingS6
+	spriteMap[PacmanDyingS6][x] = 4 + 8*24;
+	spriteMap[PacmanDyingS6][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS6][sizex] = 24;
+	spriteMap[PacmanDyingS6][sizey] = 24;
+
+	//PacmanDyingS7
+	spriteMap[PacmanDyingS7][x] = 4 + 9*24;
+	spriteMap[PacmanDyingS7][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS7][sizex] = 24;
+	spriteMap[PacmanDyingS7][sizey] = 24;
+
+	//PacmanDyingS8
+	spriteMap[PacmanDyingS8][x] = 4 + 10*24;
+	spriteMap[PacmanDyingS8][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS8][sizex] = 24;
+	spriteMap[PacmanDyingS8][sizey] = 24;
+
+	//PacmanDyingS9
+	spriteMap[PacmanDyingS9][x] = 4 + 11*24;
+	spriteMap[PacmanDyingS9][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS9][sizex] = 24;
+	spriteMap[PacmanDyingS9][sizey] = 24;
+
+	//PacmanDyingS10
+	spriteMap[PacmanDyingS10][x] = 4 + 12*24;
+	spriteMap[PacmanDyingS10][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS10][sizex] = 24;
+	spriteMap[PacmanDyingS10][sizey] = 24;
+
+	//PacmanDyingS11
+	spriteMap[PacmanDyingS11][x] = 4 + 13*24;
+	spriteMap[PacmanDyingS11][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS11][sizex] = 24;
+	spriteMap[PacmanDyingS11][sizey] = 24;
+
+	//PacmanDyingS12
+	spriteMap[PacmanDyingS12][x] = 4 + 14*24;
+	spriteMap[PacmanDyingS12][y] = 4 + 8*24;
+	spriteMap[PacmanDyingS12][sizex] = 24;
+	spriteMap[PacmanDyingS12][sizey] = 24;
 	
+	// Specials
 	spriteMap[dot][x] = 4+16*12;
 	spriteMap[dot][y] = 5;
 	spriteMap[dot][sizex] = 12;
@@ -384,47 +761,47 @@ void Game::loadSprites(){
 	
 	// Numbers
 	spriteMap[num0][x] = 4+0*12;
-	spriteMap[num0][y] = 6;
+	spriteMap[num0][y] = 5;
 	spriteMap[num0][sizex] = 12;
 	spriteMap[num0][sizey] = 12;
 
 	spriteMap[num1][x] = 4+1*12;
-	spriteMap[num1][y] = 6;
+	spriteMap[num1][y] = 5;
 	spriteMap[num1][sizex] = 12;
 	spriteMap[num1][sizey] = 12;
 
 	spriteMap[num2][x] = 4+2*12;
-	spriteMap[num2][y] = 6;
+	spriteMap[num2][y] = 5;
 	spriteMap[num2][sizex] = 12;
 	spriteMap[num2][sizey] = 12;
 
 	spriteMap[num3][x] = 4+3*12;
-	spriteMap[num3][y] = 6;
+	spriteMap[num3][y] = 5;
 	spriteMap[num3][sizex] = 12;
 	spriteMap[num3][sizey] = 12;
 
 	spriteMap[num4][x] = 4+4*12;
-	spriteMap[num4][y] = 6;
+	spriteMap[num4][y] = 5;
 	spriteMap[num4][sizex] = 12;
 	spriteMap[num4][sizey] = 12;
 
 	spriteMap[num5][x] = 4+5*12;
-	spriteMap[num5][y] = 6;
+	spriteMap[num5][y] = 5;
 	spriteMap[num5][sizex] = 12;
 	spriteMap[num5][sizey] = 12;
 
 	spriteMap[num6][x] = 4+6*12;
-	spriteMap[num6][y] = 6;
+	spriteMap[num6][y] = 5;
 	spriteMap[num6][sizex] = 12;
 	spriteMap[num6][sizey] = 12;
 
 	spriteMap[num7][x] = 4+7*12;
-	spriteMap[num7][y] = 6;
+	spriteMap[num7][y] = 5;
 	spriteMap[num7][sizex] = 12;
 	spriteMap[num7][sizey] = 12;
 
 	spriteMap[num8][x] = 4+8*12;
-	spriteMap[num8][y] = 6;
+	spriteMap[num8][y] = 5;
 	spriteMap[num8][sizex] = 12;
 	spriteMap[num8][sizey] = 12;
 	
@@ -502,15 +879,15 @@ void Game::refresh(){
 void Game::drawScore(){
 	// Draw amount of lives
 	for(int i=0;i<score.lives;i++){
-		SDL_Rect dst = {2*24-i*24, 31*12, spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
-		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_Rect dst = {2*24-i*24, 31*12, spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
+		SDL_Rect src = {spriteMap[PacmanEatRight1][x], spriteMap[PacmanEatRight1][y], spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
 	
 	// Draw fruitbonus
 	if(score.fruitbonus){
-		SDL_Rect dst = {4*24, 31*12, spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
-		SDL_Rect src = {spriteMap[pacmanright][x], spriteMap[pacmanright][y], spriteMap[pacmanright][sizex], spriteMap[pacmanright][sizey]};
+		SDL_Rect dst = {4*24, 31*12, spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
+		SDL_Rect src = {spriteMap[PacmanEatRight1][x], spriteMap[PacmanEatRight1][y], spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
 	
