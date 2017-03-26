@@ -58,7 +58,20 @@ enum ObjectType{
 	wall43,
 	wall44,
 	wall45,
-	wall46
+	wall46,
+	
+	// All numbers
+	num0,
+	num1,
+	num2,
+	num3,
+	num4,
+	num5,
+	num6,
+	num7,
+	num8,
+	num9
+	
 };
 
 class VisibleObject{

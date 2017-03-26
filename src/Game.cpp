@@ -18,7 +18,7 @@ void Game::main(){
 	window = SDL_CreateWindow("Programming 2: PACMAN",
 							  SDL_WINDOWPOS_CENTERED,
 							  SDL_WINDOWPOS_CENTERED,
-							  12*28+2, 12*31+1*24,
+							  12*28+2, 12*31+1*24+2,
 							  SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	
@@ -63,7 +63,7 @@ void Game::newLevel(){
 	for(int i=0; i<map.size(); i++)
 		for(int j=0; j<map[i].size(); j++){
 			// Wall
-			if(map[i][j]>=10 && map[i][j]<=32){
+			if((map[i][j]>=10 && map[i][j]<=32) || (map[i][j]>=35 && map[i][j]<=38)){
 				Wall * w = new Wall;
 				w->pos.x = j*12;
 				w->pos.y = i*12;
@@ -381,6 +381,53 @@ void Game::loadSprites(){
 	spriteMap[wall46][sizex] = 12;
 	spriteMap[wall46][sizey] = 12;
 	
+	// Numbers
+	spriteMap[num0][x] = 4+0*12;
+	spriteMap[num0][y] = 6;
+	spriteMap[num0][sizex] = 12;
+	spriteMap[num0][sizey] = 12;
+
+	spriteMap[num1][x] = 4+1*12;
+	spriteMap[num1][y] = 6;
+	spriteMap[num1][sizex] = 12;
+	spriteMap[num1][sizey] = 12;
+
+	spriteMap[num2][x] = 4+2*12;
+	spriteMap[num2][y] = 6;
+	spriteMap[num2][sizex] = 12;
+	spriteMap[num2][sizey] = 12;
+
+	spriteMap[num3][x] = 4+3*12;
+	spriteMap[num3][y] = 6;
+	spriteMap[num3][sizex] = 12;
+	spriteMap[num3][sizey] = 12;
+
+	spriteMap[num4][x] = 4+4*12;
+	spriteMap[num4][y] = 6;
+	spriteMap[num4][sizex] = 12;
+	spriteMap[num4][sizey] = 12;
+
+	spriteMap[num5][x] = 4+5*12;
+	spriteMap[num5][y] = 6;
+	spriteMap[num5][sizex] = 12;
+	spriteMap[num5][sizey] = 12;
+
+	spriteMap[num6][x] = 4+6*12;
+	spriteMap[num6][y] = 6;
+	spriteMap[num6][sizex] = 12;
+	spriteMap[num6][sizey] = 12;
+
+	spriteMap[num7][x] = 4+7*12;
+	spriteMap[num7][y] = 6;
+	spriteMap[num7][sizex] = 12;
+	spriteMap[num7][sizey] = 12;
+
+	spriteMap[num8][x] = 4+8*12;
+	spriteMap[num8][y] = 6;
+	spriteMap[num8][sizex] = 12;
+	spriteMap[num8][sizey] = 12;
+	
+	
 	// Map map content to objectTypes
 	mapToSprite[0] = null;
 	mapToSprite[1] = dot;
@@ -410,18 +457,22 @@ void Game::loadSprites(){
 	mapToSprite[32] = wall7;	
 	mapToSprite[33] = door;
 	mapToSprite[34] = null;
+	mapToSprite[35] = wall37;
+	mapToSprite[36] = wall38;
+	mapToSprite[37] = wall36;
+	mapToSprite[38] = wall35;
 	
 	// Map numbers to ObjectTypes
-	numToSprite[0] = pacmanright;
-	numToSprite[1] = pacmanright;
-	numToSprite[2] = pacmanright;
-	numToSprite[3] = pacmanright;
-	numToSprite[4] = pacmanright;
-	numToSprite[5] = pacmanright;
-	numToSprite[6] = pacmanright;
-	numToSprite[7] = pacmanright;
-	numToSprite[8] = pacmanright;
-	numToSprite[9] = pacmanright;
+	numToSprite[0] = num0;
+	numToSprite[1] = num1;
+	numToSprite[2] = num2;
+	numToSprite[3] = num3;
+	numToSprite[4] = num4;
+	numToSprite[5] = num5;
+	numToSprite[6] = num6;
+	numToSprite[7] = num7;
+	numToSprite[8] = num8;
+	numToSprite[9] = num9;
 }
 
 void Game::refresh(){
