@@ -13,7 +13,6 @@ enum ObjectType{
 	door,
 	
 	// All wall types
-	wall0,
 	wall1,
 	wall2,
 	wall3,
