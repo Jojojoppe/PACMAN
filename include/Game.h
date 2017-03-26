@@ -1,9 +1,10 @@
-#pragma once 
+#pragma once
 
 #include <vector>
 #include <map>
 
 #include <VisibleObject.h>
+
 #include <Sprite.h>
 #include <Pacman.h>
 #include <Score.h>

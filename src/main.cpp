@@ -1,9 +1,10 @@
 #include <iostream>
 #include <Game.h>
 
+Game G;
+
 int main(int argc, char * argv[]){
-	
-	Game G;
+
 	G.main();
 	
 	return 0;

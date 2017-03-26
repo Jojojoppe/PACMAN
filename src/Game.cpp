@@ -38,6 +38,27 @@ void Game::main(){
 			if (e.type == SDL_QUIT){
 				quit = true;
 			}
+			
+			if (e.type == SDL_KEYDOWN){
+				switch (e.key.keysym.sym){
+					case SDLK_LEFT:
+						pacman.ndir = left;
+						break;
+					case SDLK_RIGHT:
+						pacman.ndir = right;
+						break;
+					case SDLK_UP:
+						pacman.ndir = up;
+						break;
+					case SDLK_DOWN:
+						pacman.ndir = down;
+						break;
+					case SDLK_ESCAPE:
+						quit= true; 
+						break;
+	            }
+			}
+			
 		}
 	}
 	SDL_RemoveTimer(timer);
@@ -107,11 +128,12 @@ void Game::newLevel(){
 	// Add pacman
 	pacman.pos.y = 23*12;
 	pacman.pos.x = 14*12;
-	pacman.dir = right;
+	pacman.dir = left;
 	pacman.sprite.sprite = PacmanEatRight1;
 	pacman.sprite.pos.x = -6;
 	pacman.sprite.pos.y = -6;
-	pacman.speed = 0;
+	pacman.speed = 5;
+	pacman.game = (void *) this;
 	
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
@@ -870,6 +892,9 @@ void Game::refresh(){
 	SDL_Rect dst = {pacman.pos.x+pacman.sprite.pos.x, pacman.pos.y+pacman.sprite.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_Rect src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_RenderCopy(renderer, sheet, &src, &dst);
+	
+	// Move pacman
+	pacman.move();
 	
 	drawScore();
 	

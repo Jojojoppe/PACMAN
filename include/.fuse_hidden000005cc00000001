@@ -2,8 +2,6 @@
 
 #include <DynamicObject.h>
 
-class Game;
-
 class Pacman : public DynamicObject{
 	
 	private:
@@ -13,8 +11,6 @@ class Pacman : public DynamicObject{
 		bool checkCollision();
 	
 	public:
-		Direction 	ndir;
-	
 		void draw() override;
 		void move();
 };

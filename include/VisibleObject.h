@@ -140,10 +140,14 @@ enum ObjectType{
 	PacmanDyingS12
 };
 
-class VisibleObject{
+class VisibleObject{;
+	
 	public:
 		Pos		pos;
 		Sprite	sprite;
 		
 		virtual void draw();
+		
+		void *	game;
+		
 };
