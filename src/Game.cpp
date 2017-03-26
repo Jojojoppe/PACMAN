@@ -119,11 +119,6 @@ void Game::newLevel(){
 }
 
 void Game::loadSprites(){
-		
-	spriteMap[wall][x] = 4+6*24;
-	spriteMap[wall][y] = 4+11*24;
-	spriteMap[wall][sizex] = 12;
-	spriteMap[wall][sizey] = 12;
 	
 	spriteMap[pacmanright][x] = 4+0*24;
 	spriteMap[pacmanright][y] = 5+11*24;
@@ -380,6 +375,12 @@ void Game::loadSprites(){
 	spriteMap[wall46][y] = 5+7*12;
 	spriteMap[wall46][sizex] = 12;
 	spriteMap[wall46][sizey] = 12;
+	
+	// Black background
+	spriteMap[null][x] = 4+30*12;
+	spriteMap[null][y] = 5+7*12;
+	spriteMap[null][sizex] = 12;
+	spriteMap[null][sizey] = 12;
 	
 	// Numbers
 	spriteMap[num0][x] = 4+0*12;
