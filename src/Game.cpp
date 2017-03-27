@@ -203,219 +203,219 @@ void Game::loadSprites(){
 	//------------
 
 	//PinkyRight1
-	spriteMap[PinkyRight1][x] = 4 + 0*24;
-	spriteMap[PinkyRight1][y] = 4 + 9*24;
+	spriteMap[PinkyRight1][x] = 3 + 0*24;
+	spriteMap[PinkyRight1][y] = 5 + 9*24;
 	spriteMap[PinkyRight1][sizex] = 24;
 	spriteMap[PinkyRight1][sizey] = 24;
 
 	//PinkyRight2
-	spriteMap[PinkyRight2][x] = 4 + 1*24;
-	spriteMap[PinkyRight2][y] = 4 + 9*24;
+	spriteMap[PinkyRight2][x] = 3 + 1*24;
+	spriteMap[PinkyRight2][y] = 5 + 9*24;
 	spriteMap[PinkyRight2][sizex] = 24;
 	spriteMap[PinkyRight2][sizey] = 24;
 
 	//PinkyDown1
-	spriteMap[PinkyDown1][x] = 4 + 2*24;
+	spriteMap[PinkyDown1][x] = 3 + 2*24;
 	spriteMap[PinkyDown1][y] = 4 + 9*24;
 	spriteMap[PinkyDown1][sizex] = 24;
 	spriteMap[PinkyDown1][sizey] = 24;
 
 	//PinkyDown2
-	spriteMap[PinkyDown2][x] = 4 + 3*24;
+	spriteMap[PinkyDown2][x] = 3 + 3*24;
 	spriteMap[PinkyDown2][y] = 4 + 9*24;
 	spriteMap[PinkyDown2][sizex] = 24;
 	spriteMap[PinkyDown2][sizey] = 24;
 
 	//PinkyLeft1
-	spriteMap[PinkyLeft1][x] = 4 + 4*24;
+	spriteMap[PinkyLeft1][x] = 3 + 4*24;
 	spriteMap[PinkyLeft1][y] = 4 + 9*24;
 	spriteMap[PinkyLeft1][sizex] = 24;
 	spriteMap[PinkyLeft1][sizey] = 24;
 
 	//PinkyLeft2
-	spriteMap[PinkyLeft2][x] = 4 + 5*24;
+	spriteMap[PinkyLeft2][x] = 3 + 5*24;
 	spriteMap[PinkyLeft2][y] = 4 + 9*24;
 	spriteMap[PinkyLeft2][sizex] = 24;
 	spriteMap[PinkyLeft2][sizey] = 24;
 
 	//PinkyUp1
-	spriteMap[PinkyUp1][x] = 4 + 6*24;
+	spriteMap[PinkyUp1][x] = 3 + 6*24;
 	spriteMap[PinkyUp1][y] = 4 + 9*24;
 	spriteMap[PinkyUp1][sizex] = 24;
 	spriteMap[PinkyUp1][sizey] = 24;
 
 	//PinkyUp2
-	spriteMap[PinkyUp2][x] = 4 + 7*24;
+	spriteMap[PinkyUp2][x] = 3 + 7*24;
 	spriteMap[PinkyUp2][y] = 4 + 9*24;
 	spriteMap[PinkyUp2][sizex] = 24;
 	spriteMap[PinkyUp2][sizey] = 24;
 	//----------------------------------------------------
 	//InkyRight1
-	spriteMap[InkyRight1][x] = 4 + 8*24;
+	spriteMap[InkyRight1][x] = 3 + 8*24;
 	spriteMap[InkyRight1][y] = 4 + 9*24;
 	spriteMap[InkyRight1][sizex] = 24;
 	spriteMap[InkyRight1][sizey] = 24;
 
 	//InkyRight2
-	spriteMap[InkyRight2][x] = 4 + 9*24;
+	spriteMap[InkyRight2][x] = 3 + 9*24;
 	spriteMap[InkyRight2][y] = 4 + 9*24;
 	spriteMap[InkyRight2][sizex] = 24;
 	spriteMap[InkyRight2][sizey] = 24;
 
 	//InkyDown1
-	spriteMap[InkyDown1][x] = 4 + 10*24;
+	spriteMap[InkyDown1][x] = 3 + 10*24;
 	spriteMap[InkyDown1][y] = 4 + 9*24;
 	spriteMap[InkyDown1][sizex] = 24;
 	spriteMap[InkyDown1][sizey] = 24;
 
 	//InkyDown2
-	spriteMap[InkyDown2][x] = 4 + 11*24;
+	spriteMap[InkyDown2][x] = 3 + 11*24;
 	spriteMap[InkyDown2][y] = 4 + 9*24;
 	spriteMap[InkyDown2][sizex] = 24;
 	spriteMap[InkyDown2][sizey] = 24;
 
 	//InkyLeft1
-	spriteMap[InkyLeft1][x] = 4 + 12*24;
+	spriteMap[InkyLeft1][x] = 3 + 12*24;
 	spriteMap[InkyLeft1][y] = 4 + 9*24;
 	spriteMap[InkyLeft1][sizex] = 24;
 	spriteMap[InkyLeft1][sizey] = 24;
 
 	//InkyLeft2
-	spriteMap[InkyLeft2][x] = 4 + 13*24;
+	spriteMap[InkyLeft2][x] = 3 + 13*24;
 	spriteMap[InkyLeft2][y] = 4 + 9*24;
 	spriteMap[InkyLeft2][sizex] = 24;
 	spriteMap[InkyLeft2][sizey] = 24;
 
 	//InkyUp1
-	spriteMap[InkyUp1][x] = 4 + 14*24;
+	spriteMap[InkyUp1][x] = 3 + 14*24;
 	spriteMap[InkyUp1][y] = 4 + 9*24;
 	spriteMap[InkyUp1][sizex] = 24;
 	spriteMap[InkyUp1][sizey] = 24;
 
 	//InkyUp2
-	spriteMap[InkyUp2][x] = 4 + 15*24;
+	spriteMap[InkyUp2][x] = 3 + 15*24;
 	spriteMap[InkyUp2][y] = 4 + 9*24;
 	spriteMap[InkyUp2][sizex] = 24;
 	spriteMap[InkyUp2][sizey] = 24;
 	//---------------------------------------------
 
 	//ClydeRight1
-	spriteMap[ClydeRight1][x] = 4 + 0*24;
+	spriteMap[ClydeRight1][x] = 3 + 0*24;
 	spriteMap[ClydeRight1][y] = 4 + 10*24;
 	spriteMap[ClydeRight1][sizex] = 24;
 	spriteMap[ClydeRight1][sizey] = 24;
 
 	//PClydeRight2
-	spriteMap[ClydeRight2][x] = 4 + 1*24;
+	spriteMap[ClydeRight2][x] = 3 + 1*24;
 	spriteMap[ClydeRight2][y] = 4 + 10*24;
 	spriteMap[ClydeRight2][sizex] = 24;
 	spriteMap[ClydeRight2][sizey] = 24;
 
 	//ClydeDown1
-	spriteMap[ClydeDown1][x] = 4 + 2*24;
+	spriteMap[ClydeDown1][x] = 3 + 2*24;
 	spriteMap[ClydeDown1][y] = 4 + 10*24;
 	spriteMap[ClydeDown1][sizex] = 24;
 	spriteMap[ClydeDown1][sizey] = 24;
 
 	//ClydeDown2
-	spriteMap[ClydeDown2][x] = 4 + 3*24;
+	spriteMap[ClydeDown2][x] = 3 + 3*24;
 	spriteMap[ClydeDown2][y] = 4 + 10*24;
 	spriteMap[ClydeDown2][sizex] = 24;
 	spriteMap[ClydeDown2][sizey] = 24;
 
 	//ClydeLeft1
-	spriteMap[ClydeLeft1][x] = 4 + 4*24;
+	spriteMap[ClydeLeft1][x] = 3 + 4*24;
 	spriteMap[ClydeLeft1][y] = 4 + 10*24;
 	spriteMap[ClydeLeft1][sizex] = 24;
 	spriteMap[ClydeLeft1][sizey] = 24;
 
 	//ClydeLeft2
-	spriteMap[ClydeLeft2][x] = 4 + 5*24;
+	spriteMap[ClydeLeft2][x] = 3 + 5*24;
 	spriteMap[ClydeLeft2][y] = 4 + 10*24;
 	spriteMap[ClydeLeft2][sizex] = 24;
 	spriteMap[ClydeLeft2][sizey] = 24;
 
 	//ClydeUp1
-	spriteMap[ClydeUp1][x] = 4 + 6*24;
+	spriteMap[ClydeUp1][x] = 3 + 6*24;
 	spriteMap[ClydeUp1][y] = 4 + 10*24;
 	spriteMap[ClydeUp1][sizex] = 24;
 	spriteMap[ClydeUp1][sizey] = 24;
 
 	//ClydeUp2
-	spriteMap[ClydeUp2][x] = 4 + 7*24;
+	spriteMap[ClydeUp2][x] = 3 + 7*24;
 	spriteMap[ClydeUp2][y] = 4 + 10*24;
 	spriteMap[ClydeUp2][sizex] = 24;
 	spriteMap[ClydeUp2][sizey] = 24;
 	//------------------------------------------------------
 	//BlinkyRight1
-	spriteMap[BlinkyRight1][x] = 4 + 0*24;
+	spriteMap[BlinkyRight1][x] = 3 + 0*24;
 	spriteMap[BlinkyRight1][y] = 4 + 7*24;
 	spriteMap[BlinkyRight1][sizex] = 24;
 	spriteMap[BlinkyRight1][sizey] = 24;
 
 	//PBlinkyRight2
-	spriteMap[BlinkyRight2][x] = 4 + 1*24;
+	spriteMap[BlinkyRight2][x] = 3 + 1*24;
 	spriteMap[BlinkyRight2][y] = 4 + 7*24;
 	spriteMap[BlinkyRight2][sizex] = 24;
 	spriteMap[BlinkyRight2][sizey] = 24;
 
 	//BlinkyDown1
-	spriteMap[BlinkyDown1][x] = 4 + 2*24;
+	spriteMap[BlinkyDown1][x] = 3 + 2*24;
 	spriteMap[BlinkyDown1][y] = 4 + 7*24;
 	spriteMap[BlinkyDown1][sizex] = 24;
 	spriteMap[BlinkyDown1][sizey] = 24;
 
 	//BlinkyDown2
-	spriteMap[BlinkyDown2][x] = 4 + 3*24;
+	spriteMap[BlinkyDown2][x] = 3 + 3*24;
 	spriteMap[BlinkyDown2][y] = 4 + 7*24;
 	spriteMap[BlinkyDown2][sizex] = 24;
 	spriteMap[BlinkyDown2][sizey] = 24;
 
 	//BlinkyLeft1
-	spriteMap[BlinkyLeft1][x] = 4 + 4*24;
+	spriteMap[BlinkyLeft1][x] = 3 + 4*24;
 	spriteMap[BlinkyLeft1][y] = 4 + 7*24;
 	spriteMap[BlinkyLeft1][sizex] = 24;
 	spriteMap[BlinkyLeft1][sizey] = 24;
 
 	//BlinkyLeft2
-	spriteMap[BlinkyLeft2][x] = 4 + 5*24;
+	spriteMap[BlinkyLeft2][x] = 3 + 5*24;
 	spriteMap[BlinkyLeft2][y] = 4 + 7*24;
 	spriteMap[BlinkyLeft2][sizex] = 24;
 	spriteMap[BlinkyLeft2][sizey] = 24;
 
 	//BlinkyUp1
-	spriteMap[BlinkyUp1][x] = 4 + 6*24;
+	spriteMap[BlinkyUp1][x] = 3 + 6*24;
 	spriteMap[BlinkyUp1][y] = 4 + 7*24;
 	spriteMap[BlinkyUp1][sizex] = 24;
 	spriteMap[BlinkyUp1][sizey] = 24;
 
 	//BlinkyUp2
-	spriteMap[BlinkyUp2][x] = 4 + 7*24;
+	spriteMap[BlinkyUp2][x] = 3 + 7*24;
 	spriteMap[BlinkyUp2][y] = 4 + 7*24;
 	spriteMap[BlinkyUp2][sizex] = 24;
 	spriteMap[BlinkyUp2][sizey] = 24;
 	//-----------------------------------------------------
 
 	//GhostDead1
-	spriteMap[GhostDead1][x] = 4 + 12*24;
+	spriteMap[GhostDead1][x] = 3 + 12*24;
 	spriteMap[GhostDead1][y] = 4 + 6*24;
 	spriteMap[GhostDead1][sizex] = 24;
 	spriteMap[GhostDead1][sizey] = 24;
 
 	//GhostDead2
-	spriteMap[GhostDead2][x] = 4 + 13*24;
+	spriteMap[GhostDead2][x] = 3 + 13*24;
 	spriteMap[GhostDead2][y] = 4 + 6*24;
 	spriteMap[GhostDead2][sizex] = 24;
 	spriteMap[GhostDead2][sizey] = 24;
 	 
 	//GhostAlmostDead1
-	spriteMap[GhostAlmostDead1][x] = 4 + 4*24;
+	spriteMap[GhostAlmostDead1][x] = 3 + 4*24;
 	spriteMap[GhostAlmostDead1][y] = 4 + 11*24;
 	spriteMap[GhostAlmostDead1][sizex] = 24;
 	spriteMap[GhostAlmostDead1][sizey] = 24;
 
 	//GhostAlmostDead2
-	spriteMap[GhostAlmostDead2][x] = 4 + 5*24;
+	spriteMap[GhostAlmostDead2][x] = 3 + 5*24;
 	spriteMap[GhostAlmostDead2][y] = 4 + 11*24;
 	spriteMap[GhostAlmostDead2][sizex] = 24;
 	spriteMap[GhostAlmostDead2][sizey] = 24;
@@ -939,6 +939,11 @@ void Game::refresh(){
 	
 	SDL_RenderClear(renderer);
 	
+	// Create black/darkgrey background
+	SDL_Rect dst = {0, 0, 12*28+2, 12*31+1*24+4};
+	SDL_Rect src = {spriteMap[null][x], spriteMap[null][y], spriteMap[null][sizex], spriteMap[null][sizey]};
+	SDL_RenderCopy(renderer, sheet, &src, &dst);
+	
 	// Draw all objects in field
 	for(auto &i : field){
 		i->draw();
@@ -949,8 +954,8 @@ void Game::refresh(){
 	
 	// Draw pacman
 	pacman.draw();
-	SDL_Rect dst = {pacman.pos.x+pacman.sprite.pos.x, pacman.pos.y+pacman.sprite.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
-	SDL_Rect src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
+	dst = {pacman.pos.x+pacman.sprite.pos.x, pacman.pos.y+pacman.sprite.pos.y, spriteMap[(ObjectType)pacman.sprite.sprite][sizex],spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
+	src = {spriteMap[(ObjectType)pacman.sprite.sprite][x], spriteMap[(ObjectType)pacman.sprite.sprite][y], spriteMap[(ObjectType)pacman.sprite.sprite][sizex], spriteMap[(ObjectType)pacman.sprite.sprite][sizey]};
 	SDL_RenderCopy(renderer, sheet, &src, &dst);
 	
 	// Move pacman

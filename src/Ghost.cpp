@@ -54,6 +54,18 @@ void Ghost::move(){
 				if(dold==down && dir==up) continue;
 				if(dold==left && dir==right) continue;
 				if(dold==right && dir==left) continue;
+				
+				// Check if new direction is oke
+				if(dir == up) pos.y--;
+				if(dir == down) pos.y++;
+				if(dir == left) pos.x--;
+				if(dir == right) pos.x++;
+				if(checkCollision()){
+					pos = old;
+					continue;
+				}
+				
+				// Yes new direction found
 				break;
 			}
 		}
