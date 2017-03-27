@@ -1,6 +1,9 @@
 #include <Pacman.h>
 #include <Game.h>
 #include <Wall.h>
+#include <Door.h>
+#include <Tunnel.h>
+#include <Dot.h>
 
 #include <stdio.h>
 
@@ -54,6 +57,18 @@ bool Pacman::checkCollision(){
 			// WALL
 			if(dynamic_cast<Wall*>(i)!=NULL){
 				return true;
+			}
+			// DOOR
+			if(dynamic_cast<Door*>(i)!=NULL){
+				return true;
+			}
+			// WALL
+			if(dynamic_cast<Tunnel*>(i)!=NULL){
+				return true;
+			}
+			// DOT
+			if(dynamic_cast<Dot*>(i)!=NULL){
+				((Dot*)i)->eat(game);
 			}
 		}
 	}

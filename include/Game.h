@@ -14,7 +14,6 @@
 class Game{
 	
 	private:
-		Score						score;
 		
 		// Graphic things
 		SDL_Window *				window;
@@ -35,6 +34,7 @@ class Game{
 	public:
 		Pacman						pacman;
 		std::vector<VisibleObject*> 	field;
+		Score						score;
 		
 		void refresh();
 		

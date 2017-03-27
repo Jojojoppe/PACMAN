@@ -129,6 +129,7 @@ void Game::newLevel(){
 	pacman.pos.y = 23*12;
 	pacman.pos.x = 14*12;
 	pacman.dir = left;
+	pacman.ndir = left;
 	pacman.sprite.sprite = PacmanEatRight1;
 	pacman.sprite.pos.x = -6;
 	pacman.sprite.pos.y = -6;
@@ -827,6 +828,10 @@ void Game::loadSprites(){
 	spriteMap[num8][sizex] = 12;
 	spriteMap[num8][sizey] = 12;
 	
+	spriteMap[num9][x] = 4+9*12;
+	spriteMap[num9][y] = 5;
+	spriteMap[num9][sizex] = 12;
+	spriteMap[num9][sizey] = 12;
 	
 	// Map map content to objectTypes
 	mapToSprite[0] = null;
