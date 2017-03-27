@@ -15,10 +15,12 @@ void Pacman::draw(){
 		if((counter++) % 2) return;
 		sprite.sprite = PacmanDyingS1;
 		if(deadc<13) sprite.sprite += deadc++;	
+		// Dead timer
 		else{
 			deadc++;
 			sprite.sprite = null;
 		}
+		// End of dead time
 		if(deadc>30){
 			dead = false;
 			pos.x = 14*12;
@@ -26,7 +28,10 @@ void Pacman::draw(){
 			dir = left;
 			ndir = left;
 			sprite.sprite = PacmanEatRight1;
-			deadc = 0;
+			deadc = 0;		
+			
+			// If all lives are gone -> RESET
+			if(((Game*)game)->score.lives == 0) ((Game*)game)->resetGame();
 		}	
 		return;
 	}
