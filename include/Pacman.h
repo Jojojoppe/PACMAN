@@ -10,10 +10,12 @@ class Pacman : public DynamicObject{
 		int 	counter = 0;
 		bool 	open = false;
 		
-		bool checkCollision();
+		bool	dead = false;
+		int		deadc = 0;
 	
 	public:	
 		void draw() override;
 		void move();
 		Direction 	ndir;
+		bool checkCollision();
 };

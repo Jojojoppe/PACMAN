@@ -5,10 +5,31 @@
 #include <Tunnel.h>
 #include <Dot.h>
 #include <PowerPellet.h>
+#include <Ghost.h>
 
 #include <stdio.h>
 
 void Pacman::draw(){
+	
+	if(dead){
+		if((counter++) % 2) return;
+		sprite.sprite = PacmanDyingS1;
+		if(deadc<13) sprite.sprite += deadc++;	
+		else{
+			deadc++;
+			sprite.sprite = null;
+		}
+		if(deadc>30){
+			dead = false;
+			pos.x = 14*12;
+			pos.y = 23*12;
+			dir = left;
+			ndir = left;
+			sprite.sprite = PacmanEatRight1;
+			deadc = 0;
+		}	
+		return;
+	}
 	
 	// Change direction
 	if(dir == up) sprite.sprite = PacmanEatUp1;
@@ -30,7 +51,9 @@ void Pacman::draw(){
 }
 
 void Pacman::move(){
-		
+	
+	if(dead) return;
+	
 	Direction dold = dir;
 	
 	for(int i=0; i<speed; i++){
@@ -78,6 +101,15 @@ bool Pacman::checkCollision(){
 			if(dynamic_cast<PowerPellet*>(i)!=NULL){
 				((PowerPellet*)i)->eat(game);
 			}
+			
+			// Ghost
+			if(dynamic_cast<Ghost*>(i)!=NULL){
+				if(!dead){
+					((Game*)game)->score.lives--;
+					dead = true;
+				}
+			}
+			
 		}
 	}
 	return false;

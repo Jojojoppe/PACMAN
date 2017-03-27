@@ -960,6 +960,7 @@ void Game::refresh(){
 	
 	// Move pacman
 	pacman.move();
+	pacman.checkCollision();
 	
 	// Move ghosts
 	for(auto &i : field){
@@ -975,7 +976,7 @@ void Game::refresh(){
 void Game::drawScore(){
 	// Draw amount of lives
 	for(int i=0;i<score.lives;i++){
-		SDL_Rect dst = {2*24-i*24, 31*12, spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
+		SDL_Rect dst = {i*24, 31*12, spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
 		SDL_Rect src = {spriteMap[PacmanEatRight1][x], spriteMap[PacmanEatRight1][y], spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
