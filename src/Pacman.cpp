@@ -4,6 +4,7 @@
 #include <Door.h>
 #include <Tunnel.h>
 #include <Dot.h>
+#include <PowerPellet.h>
 
 #include <stdio.h>
 
@@ -71,6 +72,11 @@ bool Pacman::checkCollision(){
 			// DOT
 			if(dynamic_cast<Dot*>(i)!=NULL){
 				((Dot*)i)->eat(game);
+			}
+			
+			// PELLET
+			if(dynamic_cast<PowerPellet*>(i)!=NULL){
+				((PowerPellet*)i)->eat(game);
 			}
 		}
 	}
