@@ -48,6 +48,11 @@ void Pacman::move(){
 		if(dir == left) pos.x--;
 		if(dir == right) pos.x++;
 		if(checkCollision()) pos = old;
+		
+		// Tunnel
+		if(pos.x<-12) pos.x = 12*28;
+		if(pos.x>12*28) pos.x = -12;
+		
 	}	
 }
 
@@ -62,10 +67,7 @@ bool Pacman::checkCollision(){
 			if(dynamic_cast<Door*>(i)!=NULL){
 				return true;
 			}
-			// WALL
-			if(dynamic_cast<Tunnel*>(i)!=NULL){
-				return true;
-			}
+			
 			// DOT
 			if(dynamic_cast<Dot*>(i)!=NULL){
 				((Dot*)i)->eat(game);
