@@ -12,9 +12,8 @@ class Pacman : public DynamicObject{
 		
 		bool checkCollision();
 	
-	public:
-		Direction 	ndir;
-	
+	public:	
 		void draw() override;
 		void move();
+		Direction 	ndir;
 };

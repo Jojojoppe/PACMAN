@@ -9,5 +9,12 @@ enum GhostType{
 };
 
 class Ghost : public DynamicObject{
-	
+	private:
+		bool tmspr = false;
+		int counter = 0;
+		bool checkCollision();
+	public:
+		void draw() override;
+		int		spritebase;
+		void move();
 };

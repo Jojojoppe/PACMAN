@@ -9,6 +9,9 @@
 #include <PowerPellet.h>
 
 #include <Pacman.h>
+#include <InkyClyde.h>
+#include <Pinky.h>
+#include <Blinky.h>
 
 #include <iostream>
 
@@ -135,6 +138,58 @@ void Game::newLevel(){
 	pacman.sprite.pos.y = -6;
 	pacman.speed = 5;
 	pacman.game = (void *) this;
+	
+	// Add inky
+	InkyClyde * inky = new InkyClyde();
+	inky->pos.y = 14*12;
+	inky->pos.x = 14*12;
+	inky->dir = up;
+	inky->sprite.sprite = InkyUp1 + 2*(rand()%4);
+	inky->spritebase = InkyUp1;
+	inky->sprite.pos.x = -6;
+	inky->sprite.pos.y = -6;
+	inky->speed = 4;
+	inky->game = (void *) this;
+	field.push_back(inky);
+	
+	// Add clyde
+	InkyClyde * clyde = new InkyClyde();
+	clyde->pos.y = 14*12;
+	clyde->pos.x = 14*12;
+	clyde->dir = up;
+	clyde->sprite.sprite = ClydeUp1 + 2*(rand()%4);
+	clyde->spritebase = ClydeUp1;
+	clyde->sprite.pos.x = -6;
+	clyde->sprite.pos.y = -6;
+	clyde->speed = 4;
+	clyde->game = (void *) this;
+	field.push_back(clyde);
+	
+	// Add Pinky
+	Pinky * pinky = new Pinky();
+	pinky->pos.y = 14*12;
+	pinky->pos.x = 14*12;
+	pinky->dir = up;
+	pinky->sprite.sprite = PinkyUp1 + 2*(rand()%4);
+	pinky->spritebase = PinkyUp1;
+	pinky->sprite.pos.x = -6;
+	pinky->sprite.pos.y = -6;
+	pinky->speed = 4;
+	pinky->game = (void *) this;
+	field.push_back(pinky);
+
+	// Add Blinky
+	Blinky * blinky = new Blinky();
+	blinky->pos.y = 14*12;
+	blinky->pos.x = 14*12;
+	blinky->dir = up;
+	blinky->sprite.sprite = BlinkyUp1 + 2*(rand()%4);
+	blinky->spritebase = BlinkyUp1;
+	blinky->sprite.pos.x = -6;
+	blinky->sprite.pos.y = -6;
+	blinky->speed = 4;
+	blinky->game = (void *) this;
+	field.push_back(blinky);
 	
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
@@ -900,6 +955,12 @@ void Game::refresh(){
 	
 	// Move pacman
 	pacman.move();
+	
+	// Move ghosts
+	for(auto &i : field){
+		if(dynamic_cast<Ghost*>(i)!=NULL)
+			((Ghost*)i)->move();
+	}
 	
 	drawScore();
 	
