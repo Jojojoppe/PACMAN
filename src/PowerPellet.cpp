@@ -32,6 +32,12 @@ void PowerPellet::eat(void * game){
 				((Ghost*)i)->sprite.sprite = GhostDead1;
 				((Ghost*)i)->tmspr = true;
 				((Ghost*)i)->deadc = 0;
+				
+				// Reverse direction of ghosts
+				if(((Ghost*)i)->dir == up) ((Ghost*)i)->dir = down;
+				if(((Ghost*)i)->dir == down) ((Ghost*)i)->dir = up;
+				if(((Ghost*)i)->dir == right) ((Ghost*)i)->dir = left;
+				if(((Ghost*)i)->dir == left) ((Ghost*)i)->dir = right;
 								
 				//Now Pacman is unfurnable for the ghosts 
 				//If there is a collision ghost turns into eyes and score increases.
