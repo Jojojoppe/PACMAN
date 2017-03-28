@@ -23,15 +23,46 @@ void Ghost::draw(){
 			tmspr = true;
 		}
 	} else if(type==frightened){
-		sprite.sprite = GhostDead1;
-		if((deadc++) % 60)Ghosttype = almostdead;
+		if((deadc++) == 60){
+			type = almostdead;
+			deadc = 0;
+			sprite.sprite = GhostAlmostDead1;
+			tmspr = false;
+		}
 	
 		if((counter++) % 3) return;
-		if(sprite.sprite == GhostDead1) sprite.sprite++;
-		else sprite.sprite--;
-	} else if(type==dead){
+		if(tmspr){ 
+			sprite.sprite++;
+			tmspr = false;
+		}else{
+			sprite.sprite--;
+			tmspr = true;
+		}
+	}  else if(type==dead){
 		sprite.sprite = eyesUp;
-	} 
+		// Change direction
+		if(dir == up) sprite.sprite = eyesUp;
+		if(dir == down) sprite.sprite = eyesDown;
+		if(dir == left) sprite.sprite = eyesLeft;
+		if(dir == right) sprite.sprite = eyesRight;
+	} else if(type==almostdead){
+		if((counter++) % 3) return;
+		
+		// Now not changing between 1 and 2 but white and blue!
+		if(tmspr){ 
+			sprite.sprite++;
+			tmspr = false;
+		}else{
+			sprite.sprite--;
+			tmspr = true;
+		}
+		if((deadc++) == 10){
+			type = normal;
+			deadc = 0;
+			speed = 4;
+			tmspr = false;
+		}
+	}
 	
 }
 

@@ -18,4 +18,5 @@ class Pacman : public DynamicObject{
 		void move();
 		Direction 	ndir;
 		bool checkCollision();
+		int powerscore = 0;
 };
