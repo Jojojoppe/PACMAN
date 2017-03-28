@@ -24,12 +24,15 @@ void Ghost::draw(){
 		}
 	} else if(type==frightened){
 		sprite.sprite = GhostDead1;
+		if((deadc++) % 60)Ghosttype = almostdead;
+	
 		if((counter++) % 3) return;
 		if(sprite.sprite == GhostDead1) sprite.sprite++;
-		else sprite.sprite++;
+		else sprite.sprite--;
 	} else if(type==dead){
 		sprite.sprite = eyesUp;
-	}
+	} 
+	
 }
 
 bool Ghost::checkCollision(){

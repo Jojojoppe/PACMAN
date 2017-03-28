@@ -5,7 +5,8 @@
 enum GhostType{
 	normal,
 	frightened,
-	dead
+	dead,
+	almostdead
 };
 
 class Ghost : public DynamicObject{
