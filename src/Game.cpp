@@ -7,6 +7,7 @@
 #include <Tunnel.h>
 #include <Dot.h>
 #include <PowerPellet.h>
+#include <Fruit.h>
 
 #include <Pacman.h>
 #include <InkyClyde.h>

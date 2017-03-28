@@ -13,7 +13,7 @@ void Fruit::draw(){
 		
 	}
 	if(Frtcnt = 300){
-		((Game*)game)->field.pop_back();
+		//((Game*)game)->field.pop_back();
 		Frtcnt = 0;
 	}
 }
