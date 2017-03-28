@@ -19,3 +19,19 @@ void PowerPellet::eat(void * game){
 	}
 }
 
+for(auto &i : ((Game *)game)->field){
+				
+		// Ghost
+		if(dynamic_cast<Ghost*>(i)!=NULL){
+						
+				//PowerPellet is eaten ghost is frightend. 
+				((PowerPellet*)i) ->type = frightend;
+				//The ghosts speed needs to change
+				
+				//Now Pacman is unfurnable for the ghosts 
+			
+			
+				
+			}
+		}
+	}
