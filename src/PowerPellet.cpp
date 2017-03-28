@@ -16,22 +16,25 @@ void PowerPellet::eat(void * game){
 		sprite.sprite = null;
 		((Game*)game)->score.score += 50;
 		eaten = true;
-	}
-}
-
-for(auto &i : ((Game *)game)->field){
+		
+		for(auto &i : ((Game *)game)->field){
 				
 		// Ghost
 		if(dynamic_cast<Ghost*>(i)!=NULL){
 						
-				//PowerPellet is eaten ghost is frightend. 
-				((PowerPellet*)i) ->type = frightend;
-				//The ghosts speed needs to change
-				
-				//Now Pacman is unfurnable for the ghosts 
+			//PowerPellet is eaten ghost is frightend. 
+			((PowerPellet*)i) ->type = frightend;
+			//The ghosts speed needs to change
+			//i represents every ghost
+			i->speed = 2;
+							
+			//Now Pacman is unfurnable for the ghosts 
+			//If there is a collision ghost turns into eyes and score increases.
 			
 			
-				
 			}
 		}
 	}
+}
+
+
