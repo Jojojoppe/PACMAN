@@ -113,10 +113,9 @@ bool Pacman::checkCollision(){
 					if(((Ghost*)i)->type==normal){
 						((Game*)game)->score.lives--;
 						dead = true;
-					}
-					else if(((Ghost*)i)->type==frightened){
-						((Ghost*)i)->type==dead;
-						
+					}else if(((Ghost*)i)->type==frightened){
+						((Ghost*)i)->type = (GhostType)(frightened+1);
+						((Ghost*)i)->speed = 7;
 					}
 				}
 			}

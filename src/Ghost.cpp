@@ -25,14 +25,8 @@ void Ghost::draw(){
 	} else if(type==frightened){
 		sprite.sprite = GhostDead1;
 		if((counter++) % 3) return;
-		if(tmspr){
-			sprite.sprite--;
-			tmspr = false;
-		}
-		else{
-			sprite.sprite++;
-			tmspr = true;
-		}
+		if(sprite.sprite == GhostDead1) sprite.sprite++;
+		else sprite.sprite++;
 	} else if(type==dead){
 		sprite.sprite = eyesUp;
 	}
