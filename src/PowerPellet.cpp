@@ -24,20 +24,17 @@ void PowerPellet::eat(void * game){
 					
 			// Ghost
 			if(dynamic_cast<Ghost*>(i)!=NULL){
-							
-				if(((Ghost*)i)->type == normal){
-					//PowerPellet is eaten ghost is frightend. 
-					((Ghost*)i)->type = frightened;
-					//The ghosts speed needs to change
-					//i represents every ghost
-					((Ghost*)i)->speed = 2;
-					((Ghost*)i)->sprite.sprite = GhostDead1;
-					((Ghost*)i)->tmspr = true;
-									
-					//Now Pacman is unfurnable for the ghosts 
-					//If there is a collision ghost turns into eyes and score increases.
-				
-				}
+				//PowerPellet is eaten ghost is frightend. 
+				((Ghost*)i)->type = frightened;
+				//The ghosts speed needs to change
+				//i represents every ghost
+				((Ghost*)i)->speed = 2;
+				((Ghost*)i)->sprite.sprite = GhostDead1;
+				((Ghost*)i)->tmspr = true;
+				((Ghost*)i)->deadc = 0;
+								
+				//Now Pacman is unfurnable for the ghosts 
+				//If there is a collision ghost turns into eyes and score increases.
 			}
 		}
 	}
