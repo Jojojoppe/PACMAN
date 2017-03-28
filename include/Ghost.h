@@ -17,4 +17,5 @@ class Ghost : public DynamicObject{
 		void draw() override;
 		int		spritebase;
 		void move();
+		GhostType type = normal;
 };
