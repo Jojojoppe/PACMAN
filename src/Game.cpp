@@ -191,6 +191,13 @@ void Game::newLevel(){
 	blinky->game = (void *) this;
 	field.push_back(blinky);
 	
+	//Add Fruit
+	Fruit * fruit = new Fruit();
+	fruit->pos.y = 18*12;
+	fruit->pos.x = 14*12;
+	fruit->sprite.sprite = null;
+	field.push_back(fruit);
+	
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
 	
