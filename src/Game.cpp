@@ -419,6 +419,30 @@ void Game::loadSprites(){
 	spriteMap[GhostAlmostDead2][y] = 4 + 11*24;
 	spriteMap[GhostAlmostDead2][sizex] = 24;
 	spriteMap[GhostAlmostDead2][sizey] = 24;
+	
+	//eyesUp
+	spriteMap[eyesUp][x] = 4 + 14*24;
+	spriteMap[eyesUp][y] = 4 + 10*24;
+	spriteMap[eyesUp][sizex] = 24;
+	spriteMap[eyesUp][sizey] = 24;
+
+	//eyesDown
+	spriteMap[eyesDown][x] = 4 + 11*24;
+	spriteMap[eyesDown][y] = 4 + 10*24;
+	spriteMap[eyesDown][sizex] = 24;
+	spriteMap[eyesDown][sizey] = 24;
+
+	//eyesLeft
+	spriteMap[eyesLeft][x] = 4 + 12*24;
+	spriteMap[eyesLeft][y] = 4 + 10*24;
+	spriteMap[eyesLeft][sizex] = 24;
+	spriteMap[eyesLeft][sizey] = 24;
+
+	//eyesRight
+	spriteMap[eyesRight][x] = 4 + 9*24;
+	spriteMap[eyesRight][y] = 4 + 10*24;
+	spriteMap[eyesRight][sizex] = 24;
+	spriteMap[eyesRight][sizey] = 24;
 
 	//-----------
 	//Scores
@@ -446,7 +470,44 @@ void Game::loadSprites(){
 	spriteMap[Score1600][y] = 4 + 7*24;
 	spriteMap[Score1600][sizex] = 24;
 	spriteMap[Score1600][sizey] = 24;
+	
+	//fruitCherry
+	spriteMap[fruitCherry][x] = 4 + 0*24;
+	spriteMap[fruitCherry][y] = 4 + 5*24;
+	spriteMap[fruitCherry][sizex] = 24;
+	spriteMap[fruitCherry][sizey] = 24;
 
+	//fruitStrawberry
+	spriteMap[fruitStrawberry][x] = 4 + 1*24;
+	spriteMap[fruitStrawberry][y] = 4 + 5*24;
+	spriteMap[fruitStrawberry][sizex] = 24;
+	spriteMap[fruitStrawberry][sizey] = 24;
+
+	//fruitOrange
+	spriteMap[fruitOrange][x] = 4 + 2*24;
+	spriteMap[fruitOrange][y] = 4 + 5*24;
+	spriteMap[fruitOrange][sizex] = 24;
+	spriteMap[fruitOrange][sizey] = 24;
+
+	//fruitLemon
+	spriteMap[fruitLemon][x] = 4 + 3*24;
+	spriteMap[fruitLemon][y] = 4 + 5*24;
+	spriteMap[fruitLemon][sizex] = 24;
+	spriteMap[fruitLemon][sizey] = 24;
+
+	//fruitApple
+	spriteMap[fruitApple][x] = 4 + 4*24;
+	spriteMap[fruitApple][y] = 4 + 5*24;
+	spriteMap[fruitApple][sizex] = 24;
+	spriteMap[fruitApple][sizey] = 24;
+
+	//fruitGrapes
+	spriteMap[fruitGrapes][x] = 4 + 5*24;
+	spriteMap[fruitGrapes][y] = 4 + 5*24;
+	spriteMap[fruitGrapes][sizex] = 24;
+	spriteMap[fruitGrapes][sizey] = 24;
+	
+	
 	//----------------------
 	//Pacman eating
 	//----------------------
