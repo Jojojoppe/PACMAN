@@ -1,5 +1,6 @@
 #include "PowerPellet.h"
 #include <Game.h>
+#include <Ghost.h>
 
 PowerPellet::PowerPellet(){
 	counter = 0;
@@ -18,20 +19,20 @@ void PowerPellet::eat(void * game){
 		eaten = true;
 		
 		for(auto &i : ((Game *)game)->field){
-				
-		// Ghost
-		if(dynamic_cast<Ghost*>(i)!=NULL){
-						
-			//PowerPellet is eaten ghost is frightend. 
-			((PowerPellet*)i) ->type = frightend;
-			//The ghosts speed needs to change
-			//i represents every ghost
-			i->speed = 2;
+					
+			// Ghost
+			if(dynamic_cast<Ghost*>(i)!=NULL){
 							
-			//Now Pacman is unfurnable for the ghosts 
-			//If there is a collision ghost turns into eyes and score increases.
-			
-			
+				//PowerPellet is eaten ghost is frightend. 
+				((Ghost*)i)->type = frightened;
+				//The ghosts speed needs to change
+				//i represents every ghost
+				((Ghost*)i)->speed = 2;
+								
+				//Now Pacman is unfurnable for the ghosts 
+				//If there is a collision ghost turns into eyes and score increases.
+				
+				
 			}
 		}
 	}
