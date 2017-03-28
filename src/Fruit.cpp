@@ -1,4 +1,5 @@
 #include "Fruit.h"
+#include <Game.h>
 //The fruit should appear on the board, 
 //it can be removed with the pushback function
 void Fruit::draw(){
@@ -8,7 +9,7 @@ void Fruit::draw(){
 	}
 	else if(Frtcnt >= 160 && Frtcnt < 301){
 		Frtcnt++;
-		sprite.sprite = FruitCherry;
+		sprite.sprite = fruitCherry;
 		
 	}
 	if(Frtcnt = 300){
