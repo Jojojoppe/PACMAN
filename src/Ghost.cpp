@@ -3,22 +3,38 @@
 #include <Wall.h>
 
 void Ghost::draw(){
-	// Change direction
-	if(dir == up) sprite.sprite = spritebase;
-	if(dir == down) sprite.sprite = spritebase+2;
-	if(dir == left) sprite.sprite = spritebase+4;
-	if(dir == right) sprite.sprite = spritebase+6;
-	if(tmspr) sprite.sprite++;	// if open set GhostXY2
 	
-	// Open and close
-	if((counter++) % 3) return;
-	if(tmspr){
-		sprite.sprite--;
-		tmspr = false;
-	}
-	else{
-		sprite.sprite++;
-		tmspr = true;
+	if(type==normal){
+		// Change direction
+		if(dir == up) sprite.sprite = spritebase;
+		if(dir == down) sprite.sprite = spritebase+2;
+		if(dir == left) sprite.sprite = spritebase+4;
+		if(dir == right) sprite.sprite = spritebase+6;
+		if(tmspr) sprite.sprite++;	// if open set GhostXY2
+		
+		// Open and close
+		if((counter++) % 3) return;
+		if(tmspr){
+			sprite.sprite--;
+			tmspr = false;
+		}
+		else{
+			sprite.sprite++;
+			tmspr = true;
+		}
+	} else if(type==frightened){
+		sprite.sprite = GhostDead1;
+		if((counter++) % 3) return;
+		if(tmspr){
+			sprite.sprite--;
+			tmspr = false;
+		}
+		else{
+			sprite.sprite++;
+			tmspr = true;
+		}
+	} else if(type==dead){
+		sprite.sprite = eyesUp;
 	}
 }
 

@@ -110,8 +110,13 @@ bool Pacman::checkCollision(){
 			// Ghost
 			if(dynamic_cast<Ghost*>(i)!=NULL){
 				if(!dead){
-					((Game*)game)->score.lives--;
-					dead = true;
+					if(((Ghost*)i)->type==normal){
+						((Game*)game)->score.lives--;
+						dead = true;
+					else if(((Ghost*)i)->type==frightened){
+						((Ghost*)i)->type==dead;
+						
+					}
 				}
 			}
 			

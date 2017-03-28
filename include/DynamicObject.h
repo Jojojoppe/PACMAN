@@ -10,8 +10,6 @@ enum Direction{
 };
 
 class DynamicObject : public VisibleObject {
-	private:
-		int			mcnt = 0;
 	public:
 		Direction 	dir;
 		int			speed;

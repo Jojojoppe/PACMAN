@@ -13,6 +13,7 @@ class Ghost : public DynamicObject{
 		bool tmspr = false;
 		int counter = 0;
 		bool checkCollision();
+		int deadc = 0;
 	public:
 		void draw() override;
 		int		spritebase;
