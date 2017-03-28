@@ -30,6 +30,7 @@ void PowerPellet::eat(void * game){
 					//i represents every ghost
 					((Ghost*)i)->speed = 2;
 					((Ghost*)i)->sprite.sprite = GhostDead1;
+					((Ghost*)i)->tmspr = true;
 									
 					//Now Pacman is unfurnable for the ghosts 
 					//If there is a collision ghost turns into eyes and score increases.
