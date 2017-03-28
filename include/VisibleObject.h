@@ -110,11 +110,22 @@ enum ObjectType{
 	GhostAlmostDead1,
 	GhostAlmostDead2,
 	
+	eyesUp,
+	eyesDown,
+	eyesLeft,
+	eyesRight,
+	
 	// Scores
 	Score200,	
 	Score400,	
 	Score800,	
 	Score1600,	
+	fruitCherry,
+	fruitStrawberry,
+	fruitOrange,
+	fruitLemon,
+	fruitApple,
+	fruitGrapes,
 	
 	// Pacman
 	PacmanEatFull,
