@@ -18,6 +18,8 @@ void PowerPellet::eat(void * game){
 		((Game*)game)->score.score += 50;
 		eaten = true;
 		
+		((Game *)game)->pacman.powerscore = 200;
+		
 		for(auto &i : ((Game *)game)->field){
 					
 			// Ghost

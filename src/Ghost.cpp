@@ -45,6 +45,12 @@ void Ghost::draw(){
 		if(dir == down) sprite.sprite = eyesDown;
 		if(dir == left) sprite.sprite = eyesLeft;
 		if(dir == right) sprite.sprite = eyesRight;
+		if(deadc++ == 120){
+			type = normal;
+			deadc = 0;
+			speed = 4;
+			tmspr = false;
+		}
 	} else if(type==almostdead){
 		if((counter++) % 3) return;
 		
