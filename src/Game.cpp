@@ -90,7 +90,7 @@ void Game::newLevel(){
 			// Wall
 			if((map[i][j]>=10 && map[i][j]<=32) || (map[i][j]>=35 && map[i][j]<=38)){
 				Wall * w = new Wall;
-				w->pos.x = j*12;
+				w->pos.x = j*12-12;
 				w->pos.y = i*12;
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
@@ -98,7 +98,7 @@ void Game::newLevel(){
 			// Door
 			if(map[i][j]==33){
 				Door * w = new Door;
-				w->pos.x = j*12;
+				w->pos.x = j*12-12;
 				w->pos.y = i*12;
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
@@ -106,7 +106,7 @@ void Game::newLevel(){
 			// Tunnel
 			if(map[i][j]==34){
 				Tunnel * w = new Tunnel;
-				w->pos.x = j*12;
+				w->pos.x = j*12-12;
 				w->pos.y = i*12;
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
@@ -114,7 +114,7 @@ void Game::newLevel(){
 			// PowerPellet
 			if(map[i][j]==2){
 				PowerPellet * w = new PowerPellet;
-				w->pos.x = j*12;
+				w->pos.x = j*12-12;
 				w->pos.y = i*12;
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
@@ -122,7 +122,7 @@ void Game::newLevel(){
 			// Dot
 			if(map[i][j]==1){
 				Dot * w = new Dot;
-				w->pos.x = j*12;
+				w->pos.x = j*12-12;
 				w->pos.y = i*12;
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
