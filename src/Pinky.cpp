@@ -83,5 +83,24 @@ void Pinky::move(){
 				}
 			}
 		}
+		// Tunnel
+		if(pos.x<-12) pos.x = 12*28;
+		if(pos.x>12*28) pos.x = -12;
+		
+		if(tunnel){
+			if(type==frightened || type==almostdead)
+				speed = 1;
+			else if(type==dead)
+				speed = 5;
+			else
+				speed = 2;
+		} else{
+			if(type==frightened || type==almostdead)
+				speed = 2;
+			else if(type==dead)
+				speed = 7;
+			else
+				speed = 4;
+		}
 	}
 }

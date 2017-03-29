@@ -19,4 +19,5 @@ class Ghost : public DynamicObject{
 		int deadc = 0;
 		bool checkCollision();
 		int counter = 0;
+		bool tunnel = false;
 };

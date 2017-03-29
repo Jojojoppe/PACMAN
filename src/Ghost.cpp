@@ -69,6 +69,7 @@ void Ghost::draw(){
 }
 
 bool Ghost::checkCollision(){
+	tunnel = false;
 	for(auto &i : ((Game *)game)->field){
 		if(pos.x<i->pos.x+12 && pos.x+12>i->pos.x && pos.y<i->pos.y+12 && pos.y+12>i->pos.y){
 			// WALL
@@ -77,7 +78,7 @@ bool Ghost::checkCollision(){
 			}
 			// TUNNEL
 			if(dynamic_cast<Tunnel*>(i)!=NULL){
-				return true;
+				tunnel = true;
 			}
 		}
 	}
@@ -157,5 +158,26 @@ void Ghost::move(){
 				}
 			}
 		}
+		
+		// Tunnel
+		if(pos.x<-12) pos.x = 12*28;
+		if(pos.x>12*28) pos.x = -12;
+		
+		if(tunnel){
+			if(type==frightened || type==almostdead)
+				speed = 1;
+			else if(type==dead)
+				speed = 5;
+			else
+				speed = 2;
+		} else{
+			if(type==frightened || type==almostdead)
+				speed = 2;
+			else if(type==dead)
+				speed = 7;
+			else
+				speed = 4;
+		}
+		
 	}
 }
