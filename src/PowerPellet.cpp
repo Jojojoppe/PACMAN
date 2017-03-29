@@ -23,7 +23,7 @@ void PowerPellet::eat(void * game){
 		for(auto &i : ((Game *)game)->field){
 					
 			// Ghost
-			if(dynamic_cast<Ghost*>(i)!=NULL){
+			if(dynamic_cast<Ghost*>(i)!=NULL && (((Ghost*)i)->type == normal || ((Ghost*)i)->type == frightened || ((Ghost*)i)->type == almostdead)){
 				//PowerPellet is eaten ghost is frightend. 
 				((Ghost*)i)->type = frightened;
 				//The ghosts speed needs to change

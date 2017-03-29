@@ -17,7 +17,7 @@ void Fruit::draw(){
 	if(Frtcnt == 300){
 		//((Game*)game)->field.pop_back();
 		sprite.sprite = null;
-		Frtcnt = 0;
+		//Frtcnt = 0;
 	}
 	
 }
