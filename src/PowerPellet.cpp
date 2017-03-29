@@ -15,7 +15,7 @@ void PowerPellet::draw(){
 void PowerPellet::eat(void * game){
 	if(!eaten){
 		sprite.sprite = null;
-		((Game*)game)->score.score += 50;
+		((Game*)game)->score.add(50);
 		eaten = true;
 		
 		((Game *)game)->pacman.powerscore = 200;

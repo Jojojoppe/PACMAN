@@ -6,6 +6,7 @@
 #include <Dot.h>
 #include <PowerPellet.h>
 #include <Ghost.h>
+#include <Fruit.h>
 
 #include <stdio.h>
 
@@ -107,6 +108,11 @@ bool Pacman::checkCollision(){
 				((PowerPellet*)i)->eat(game);
 			}
 			
+			// FRUIT
+			if(dynamic_cast<Fruit*>(i)!=NULL){
+				((Fruit*)i)->eat(game);
+			}
+			
 			// Ghost
 			if(dynamic_cast<Ghost*>(i)!=NULL){
 				if(!dead){
@@ -117,7 +123,7 @@ bool Pacman::checkCollision(){
 						((Ghost*)i)->type = (GhostType)(frightened+1);
 						((Ghost*)i)->speed = 7;
 						((Ghost*)i)->deadc = 0;
-						((Game*)game)->score.score += powerscore;
+						((Game*)game)->score.add(powerscore);
 						powerscore += powerscore;
 					}
 				}

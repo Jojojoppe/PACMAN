@@ -33,6 +33,7 @@ void Game::main(){
 		std::cout << " error: " << SDL_GetError();
 	loadSprites();
 	
+	score.game = (void*) this;
 	resetGame();
 	
 	bool quit = false;
@@ -82,7 +83,6 @@ void Game::newLevel(){
 	field.clear();
 	
 	SDL_RemoveTimer(timer);
-	score.reset();
 	
 	// Create map
 	for(int i=0; i<map.size(); i++)
@@ -128,6 +128,15 @@ void Game::newLevel(){
 				field.push_back(w);
 			}
 		}
+		
+	//Add Fruit
+	Fruit * fruit = new Fruit();
+	fruit->pos.y = 17*12;
+	fruit->pos.x = 14*12;
+	fruit->sprite.pos.x = -6;
+	fruit->sprite.pos.y = -6;
+	fruit->sprite.sprite = null;
+	field.push_back(fruit);
 	
 	// Add pacman
 	pacman.pos.y = 23*12;
@@ -191,13 +200,6 @@ void Game::newLevel(){
 	blinky->speed = 4;
 	blinky->game = (void *) this;
 	field.push_back(blinky);
-	
-	//Add Fruit
-	Fruit * fruit = new Fruit();
-	fruit->pos.y = 18*12;
-	fruit->pos.x = 14*12;
-	fruit->sprite.sprite = null;
-	field.push_back(fruit);
 	
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
@@ -1052,8 +1054,8 @@ void Game::drawScore(){
 	
 	// Draw fruitbonus
 	if(score.fruitbonus){
-		SDL_Rect dst = {4*24, 31*12, spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
-		SDL_Rect src = {spriteMap[PacmanEatRight1][x], spriteMap[PacmanEatRight1][y], spriteMap[PacmanEatRight1][sizex], spriteMap[PacmanEatRight1][sizey]};
+		SDL_Rect dst = {4*24, 31*12, spriteMap[fruitCherry][sizex], spriteMap[fruitCherry][sizey]};
+		SDL_Rect src = {spriteMap[fruitCherry][x], spriteMap[fruitCherry][y], spriteMap[fruitCherry][sizex], spriteMap[fruitCherry][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
 	}
 	
