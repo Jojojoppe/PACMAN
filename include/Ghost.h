@@ -20,4 +20,8 @@ class Ghost : public DynamicObject{
 		bool checkCollision();
 		int counter = 0;
 		bool tunnel = false;
+		bool scatter = true;
+		Pos scatterpos;
+		
+		Ghost(void * game);
 };

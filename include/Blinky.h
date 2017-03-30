@@ -4,5 +4,6 @@
 
 class Blinky : public Ghost{
 	public:
+		using Ghost::Ghost;
 		void move() override;
 };

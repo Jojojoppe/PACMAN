@@ -17,7 +17,7 @@ void Blinky::move(){
 			}
 		} else if(type==normal){
 			vec.x = ((Game*)game)->pacman.pos.x - pos.x;
-			vec.y = ((Game*)game)->pacman.pos.y - pos.y;
+			vec.y = ((Game*)game)->pacman.pos.y - pos.y;			
 		} else{
 			vec.x = rand()%(12*28);
 			vec.y = rand()%(12*31);

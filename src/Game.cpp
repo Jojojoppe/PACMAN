@@ -150,55 +150,23 @@ void Game::newLevel(){
 	pacman.game = (void *) this;
 	
 	// Add inky
-	InkyClyde * inky = new InkyClyde();
-	inky->pos.y = 14*12;
-	inky->pos.x = 14*12;
-	inky->dir = up;
-	inky->sprite.sprite = InkyUp1 + 2*(rand()%4);
+	InkyClyde * inky = new InkyClyde((void*)this);
 	inky->spritebase = InkyUp1;
-	inky->sprite.pos.x = -6;
-	inky->sprite.pos.y = -6;
-	inky->speed = 4;
-	inky->game = (void *) this;
 	field.push_back(inky);
 	
 	// Add clyde
-	InkyClyde * clyde = new InkyClyde();
-	clyde->pos.y = 14*12;
-	clyde->pos.x = 14*12;
-	clyde->dir = up;
-	clyde->sprite.sprite = ClydeUp1 + 2*(rand()%4);
+	InkyClyde * clyde = new InkyClyde((void*)this);
 	clyde->spritebase = ClydeUp1;
-	clyde->sprite.pos.x = -6;
-	clyde->sprite.pos.y = -6;
-	clyde->speed = 4;
-	clyde->game = (void *) this;
 	field.push_back(clyde);
 	
 	// Add Pinky
-	Pinky * pinky = new Pinky();
-	pinky->pos.y = 14*12;
-	pinky->pos.x = 14*12;
-	pinky->dir = up;
-	pinky->sprite.sprite = PinkyUp1 + 2*(rand()%4);
+	Pinky * pinky = new Pinky((void*)this);
 	pinky->spritebase = PinkyUp1;
-	pinky->sprite.pos.x = -6;
-	pinky->sprite.pos.y = -6;
-	pinky->speed = 4;
-	pinky->game = (void *) this;
 	field.push_back(pinky);
 
 	// Add Blinky
-	Blinky * blinky = new Blinky();
-	blinky->pos.y = 14*12;
-	blinky->pos.x = 14*12;
-	blinky->dir = up;
-	blinky->sprite.sprite = BlinkyUp1 + 2*(rand()%4);
+	Blinky * blinky = new Blinky((void*)this);
 	blinky->spritebase = BlinkyUp1;
-	blinky->sprite.pos.x = -6;
-	blinky->sprite.pos.y = -6;
-	blinky->speed = 4;
-	blinky->game = (void *) this;
 	field.push_back(blinky);
 	
 	refresh();

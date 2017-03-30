@@ -4,5 +4,6 @@
 
 class Pinky : public Ghost{
 	public:
+		using Ghost::Ghost;
 		void move() override;
 };

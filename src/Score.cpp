@@ -22,6 +22,7 @@ void Score::dot(){
 	if(++dotseaten==242){
 		dotseaten = 0;
 		extralife = false;
+		level++;
 		((Game*)game)->newLevel();
 	}
 }

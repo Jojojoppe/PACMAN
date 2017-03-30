@@ -99,9 +99,9 @@ void Ghost::move(){
 				speed = 4;
 				tmspr = false;
 			}
-		} else {
+		}else {
 			vec.x = rand()%(12*28);
-			vec.y = rand()%(12*31);
+			vec.y = rand()%(12*31);			
 		}
 		
 		Pos old = pos;
@@ -180,4 +180,14 @@ void Ghost::move(){
 		}
 		
 	}
+}
+
+Ghost::Ghost(void * g){
+	pos.x = 14*12;
+	pos.y = 14*12;
+	dir = up;
+	sprite.pos.x = -6;
+	sprite.pos.y = -6;
+	speed = 4;
+	game = (Game*) g;
 }
