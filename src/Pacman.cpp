@@ -7,6 +7,7 @@
 #include <PowerPellet.h>
 #include <Ghost.h>
 #include <Fruit.h>
+#include <Ghostscore.h>
 
 #include <stdio.h>
 
@@ -19,7 +20,7 @@ void Pacman::draw(){
 		// Dead timer
 		else{
 			deadc++;
-			sprite.sprite = null;
+			sprite.sprite = null_empty;
 		}
 		// End of dead time
 		if(deadc>30){
@@ -124,6 +125,8 @@ bool Pacman::checkCollision(){
 						((Ghost*)i)->speed = 7;
 						((Ghost*)i)->deadc = 0;
 						((Game*)game)->score.add(powerscore);
+						Ghostscore * gs = new Ghostscore(powerscore, pos);
+						((Game*)game)->field.push_back(gs);
 						powerscore += powerscore;
 					}
 				}

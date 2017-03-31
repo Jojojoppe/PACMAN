@@ -148,7 +148,9 @@ enum ObjectType{
 	PacmanDyingS9,
 	PacmanDyingS10,
 	PacmanDyingS11,
-	PacmanDyingS12
+	PacmanDyingS12,
+	
+	null_empty
 };
 
 class VisibleObject{;

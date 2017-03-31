@@ -440,25 +440,25 @@ void Game::loadSprites(){
 	//-----------
 	//Score200
 	spriteMap[Score200][x] = 4 + 8*24;
-	spriteMap[Score200][y] = 4 + 7*24;
+	spriteMap[Score200][y] = 5 + 7*24;
 	spriteMap[Score200][sizex] = 24;
 	spriteMap[Score200][sizey] = 24;
 
 	//Score400
 	spriteMap[Score400][x] = 4 + 9*24;
-	spriteMap[Score400][y] = 4 + 7*24;
+	spriteMap[Score400][y] = 5 + 7*24;
 	spriteMap[Score400][sizex] = 24;
 	spriteMap[Score400][sizey] = 24;
 
 	//Score800
 	spriteMap[Score800][x] = 4 + 10*24;
-	spriteMap[Score800][y] = 4 + 7*24;
+	spriteMap[Score800][y] = 5 + 7*24;
 	spriteMap[Score800][sizex] = 24;
 	spriteMap[Score800][sizey] = 24;
 
 	//Score1600
 	spriteMap[Score1600][x] = 4 + 11*24;
-	spriteMap[Score1600][y] = 4 + 7*24;
+	spriteMap[Score1600][y] = 5 + 7*24;
 	spriteMap[Score1600][sizex] = 24;
 	spriteMap[Score1600][sizey] = 24;
 	
@@ -939,6 +939,11 @@ void Game::loadSprites(){
 	spriteMap[num9][y] = 5;
 	spriteMap[num9][sizex] = 12;
 	spriteMap[num9][sizey] = 12;
+	
+	spriteMap[null_empty][x] = 0;
+	spriteMap[null_empty][y] = 0;
+	spriteMap[null_empty][sizex] = 0;
+	spriteMap[null_empty][sizey] = 0;
 	
 	// Map map content to objectTypes
 	mapToSprite[0] = null;
