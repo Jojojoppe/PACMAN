@@ -3,7 +3,6 @@
 class Score {	
 	private:
 		bool 	extralife;
-		int 	dotseaten;
 		
 	public:
 		void 	reset();
@@ -14,6 +13,8 @@ class Score {
 		int		lives;
 		int 	fruitbonus;
 		int 	level;
+		
+		int 	dotseaten;
 		
 		void *	game;
 		

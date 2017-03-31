@@ -34,10 +34,10 @@ void Fruit::draw(){
 			break;
 	}
 	
-	if(Frtcnt < 160){
-		Frtcnt++;
-	}
-	else if(Frtcnt >= 160 && Frtcnt < 300){
+	//if(Frtcnt < 160){
+	//	Frtcnt++;
+	//}
+	if(Frtcnt < 300 && ((Game*)game)->score.dotseaten>72){
 		Frtcnt++;
 		if(!eaten)
 			sprite.sprite = fruitCherry + (fruit-cherry);
@@ -53,7 +53,7 @@ void Fruit::draw(){
 }
 
 void Fruit::eat(void * game){
-	if(!eaten && Frtcnt >=160 && Frtcnt < 300){
+	if(!eaten && Frtcnt < 300 && ((Game*)game)->score.dotseaten>72){
 		eaten = true;
 		//If fruit is eaten add score
 		switch (fruit){
