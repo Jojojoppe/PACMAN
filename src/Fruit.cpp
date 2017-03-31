@@ -6,29 +6,33 @@
 //it can be removed with the pushback function
 void Fruit::draw(){
 	//Look for the level number
-	switch (level){
+	switch (((Game*)game)->score.level){
 		case 0:
 			fruit = cherry;
 			break;
 		case 1:
 			fruit = strawberry;
 			break;
-		case 2||3:
+		case 2:
+		case 3:
 			fruit = orange;
 			break;
-		case 4||5:
+		case 4:
+		case 5:
 			fruit = lemon;
 			break;
-		case 6||7:
+		case 6:
+		case 7:
 			fruit = apple; 
 			break;
-		case 8||9:
+		case 8:
+		case 9:
 			fruit = grapes; 
 			break;
 		default:
-			fruit = nofruit;
-	
-	
+			fruit = grapes;
+			break;
+	}
 	
 	if(Frtcnt < 160){
 		Frtcnt++;
@@ -36,7 +40,7 @@ void Fruit::draw(){
 	else if(Frtcnt >= 160 && Frtcnt < 300){
 		Frtcnt++;
 		if(!eaten)
-			sprite.sprite = level;
+			sprite.sprite = fruitCherry + (fruit-cherry);
 		else
 			sprite.sprite = null;
 	}
@@ -79,6 +83,7 @@ void Fruit::eat(void * game){
 				break;
 			default:
 				break;
+		}
 	}
 }
 

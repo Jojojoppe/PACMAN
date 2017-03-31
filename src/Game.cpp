@@ -149,6 +149,7 @@ void Game::newLevel(){
 	fruit->sprite.pos.x = -6;
 	fruit->sprite.pos.y = -6;
 	fruit->sprite.sprite = null;
+	fruit->game = (void*) this;
 	field.push_back(fruit);
 
 	// Add pacman
