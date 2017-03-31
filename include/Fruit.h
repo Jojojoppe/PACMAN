@@ -12,13 +12,15 @@ enum FruitType{
 };
 
 class Fruit : public StaticObject{
+	
 	private:
-		int Frtcnt = 0;
+		int Frtcnt = 0;			// Timer counter for fruit (visible time)
 		bool eaten = false;
 	
 	public:
+		FruitType fruit = nofruit;
+	
 		void draw() override;
 		void eat(void * game);
-		FruitType fruit = nofruit;
 		
 };

@@ -9,6 +9,7 @@
 #include <PowerPellet.h>
 #include <Fruit.h>
 
+// Dynamic opbjects
 #include <Pacman.h>
 #include <InkyClyde.h>
 #include <Pinky.h>
@@ -16,7 +17,12 @@
 
 #include <iostream>
 
+// Game main routine. This contains a while loop and returns when the game has stopped
 void Game::main(){
+	
+	// Seed random
+	srand(time(0));
+	
 	// Initialize window
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("Programming 2: PACMAN",
@@ -33,9 +39,11 @@ void Game::main(){
 		std::cout << " error: " << SDL_GetError();
 	loadSprites();
 	
+	// Set score object and reset game
 	score.game = (void*) this;
 	resetGame();
 	
+	// Loop until game ends. Register input and pass through pacman (the next direction is set)
 	bool quit = false;
 	SDL_Event e;
 	while(!quit){
@@ -70,11 +78,14 @@ void Game::main(){
 	
 }
 
+// Start a whole new game
 void Game::resetGame(){
 	score.reset();
 	newLevel();
 }
 
+// Reset the board by deleting all visible objects and add all the objects at the right position
+// The score is not affected
 void Game::newLevel(){
 	
 	// Delete all objects
@@ -84,14 +95,17 @@ void Game::newLevel(){
 	
 	SDL_RemoveTimer(timer);
 	
+	// Initiate things for the random fruit
 	int fruitnr = rand()%44;
 	int fruitcnt = 0;
 	int fruiti = 0;
 	int fruitj = 0;
 	
 	// Create map
+	// Loop through the map and add the visible objects to the field list.
 	for(int i=0; i<map.size(); i++)
 		for(int j=0; j<map[i].size(); j++){
+			
 			// Wall
 			if((map[i][j]>=10 && map[i][j]<=32) || (map[i][j]>=35 && map[i][j]<=38)){
 				Wall * w = new Wall;
@@ -100,6 +114,7 @@ void Game::newLevel(){
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
+			
 			// Door
 			if(map[i][j]==33){
 				Door * w = new Door;
@@ -108,6 +123,7 @@ void Game::newLevel(){
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
+			
 			// Tunnel
 			if(map[i][j]==34){
 				Tunnel * w = new Tunnel;
@@ -116,6 +132,7 @@ void Game::newLevel(){
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
+			
 			// PowerPellet
 			if(map[i][j]==2){
 				PowerPellet * w = new PowerPellet;
@@ -124,6 +141,7 @@ void Game::newLevel(){
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
+			
 			// Dot
 			if(map[i][j]==1){
 				Dot * w = new Dot;
@@ -183,11 +201,13 @@ void Game::newLevel(){
 	blinky->spritebase = BlinkyUp1;
 	field.push_back(blinky);
 	
+	// Start the timer to refresh every 50 ms
 	refresh();
 	timer = SDL_AddTimer(50, refreshTimer, (void *)this);
 	
 }
 
+// Set all the sprite positions in the spriteMap map
 void Game::loadSprites(){
 	
 	//------------
@@ -993,8 +1013,10 @@ void Game::loadSprites(){
 	numToSprite[9] = num9;
 }
 
+// Refresh function
 void Game::refresh(){
 	
+	// Clear the screen
 	SDL_RenderClear(renderer);
 	
 	// Create black/darkgrey background
@@ -1020,7 +1042,7 @@ void Game::refresh(){
 	pacman.move();
 	pacman.checkCollision();
 	
-	// Move ghosts
+	// Move ghosts, first find the ghosts in the field vector
 	for(auto &i : field){
 		if(dynamic_cast<Ghost*>(i)!=NULL)
 			((Ghost*)i)->move();
@@ -1061,6 +1083,7 @@ void Game::drawScore(){
 	}
 }
 
+// Function the SDL lib calls
 uint32_t refreshTimer(uint32_t interval, void * param){
 	((Game*)param)->refresh();
 	return interval;

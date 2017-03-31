@@ -1,5 +1,6 @@
 #include <Ghostscore.h>
 
+// When added to the field, initiate
 Ghostscore::Ghostscore(int s, Pos p){
 	pos.x = p.x;
 	pos.y = p.y;
@@ -8,6 +9,7 @@ Ghostscore::Ghostscore(int s, Pos p){
 	score = s;
 }
 
+// Show the score for 1.5 seconds
 void Ghostscore::draw(){
 	switch(score){
 		case 200:

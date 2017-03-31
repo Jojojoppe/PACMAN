@@ -6,12 +6,14 @@ PowerPellet::PowerPellet(){
 	counter = 0;
 }
 
+// Let powerpellet flash
 void PowerPellet::draw(){
 	if((counter++) % 10) return;
 	if(sprite.sprite == pellet) sprite.sprite = pelletbig;
 	else if(sprite.sprite == pelletbig) sprite.sprite = pellet;
 }
 
+// When eaten, dissappear, loop through the field to find the ghosts and make them frightened
 void PowerPellet::eat(void * game){
 	if(!eaten){
 		sprite.sprite = null;
@@ -20,14 +22,14 @@ void PowerPellet::eat(void * game){
 		
 		((Game *)game)->pacman.powerscore = 200;
 		
+		// Loop through field
 		for(auto &i : ((Game *)game)->field){
 					
-			// Ghost
+			// normal or frightened ghost is found
 			if(dynamic_cast<Ghost*>(i)!=NULL && (((Ghost*)i)->type == normal || ((Ghost*)i)->type == frightened || ((Ghost*)i)->type == almostdead)){
 				//PowerPellet is eaten ghost is frightend. 
 				((Ghost*)i)->type = frightened;
 				//The ghosts speed needs to change
-				//i represents every ghost
 				((Ghost*)i)->speed = 2;
 				((Ghost*)i)->sprite.sprite = GhostDead1;
 				((Ghost*)i)->tmspr = true;

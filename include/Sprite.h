@@ -11,6 +11,6 @@ enum SpriteInfo{
 
 class Sprite {
 	public:
-		int 		sprite;		// ERROR: should be Game::ObjectType
+		int 		sprite;
 		Pos			pos;		// Relative drawing position towards object position
 };

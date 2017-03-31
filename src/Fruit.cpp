@@ -2,10 +2,9 @@
 #include <Game.h>
 #include <Score.h>
 
-//The fruit should appear on the board, 
-//it can be removed with the pushback function
 void Fruit::draw(){
-	//Look for the level number
+	
+	//Look for the level number -> each level the type should be different
 	switch (((Game*)game)->score.level){
 		case 0:
 			fruit = cherry;
@@ -34,9 +33,7 @@ void Fruit::draw(){
 			break;
 	}
 	
-	//if(Frtcnt < 160){
-	//	Frtcnt++;
-	//}
+	// Show fruit for 15 seconds
 	if(Frtcnt < 300 && ((Game*)game)->score.dotseaten>72){
 		Frtcnt++;
 		if(!eaten)
@@ -44,14 +41,15 @@ void Fruit::draw(){
 		else
 			sprite.sprite = null;
 	}
+	
+	// After 15 seconds the fruit must dissappear
 	if(Frtcnt == 300){
-		//((Game*)game)->field.pop_back();
 		sprite.sprite = null;
-		//Frtcnt = 0;
 	}
 	
 }
 
+// Eat the fruit
 void Fruit::eat(void * game){
 	if(!eaten && Frtcnt < 300 && ((Game*)game)->score.dotseaten>72){
 		eaten = true;

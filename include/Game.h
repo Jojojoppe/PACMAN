@@ -43,4 +43,5 @@ class Game{
 		void newLevel();
 };
 
+// The timer function called by SDL. Outside class to get rid of some compile errors
 extern uint32_t refreshTimer(uint32_t interval, void * param);

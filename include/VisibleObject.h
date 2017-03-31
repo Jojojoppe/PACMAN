@@ -150,7 +150,7 @@ enum ObjectType{
 	PacmanDyingS11,
 	PacmanDyingS12,
 	
-	null_empty
+	null_empty				// null gives 12*12 black square (uses as backgound) this one is really nothing
 };
 
 class VisibleObject{;
@@ -159,8 +159,8 @@ class VisibleObject{;
 		Pos		pos;
 		Sprite	sprite;
 		
-		virtual void draw();
+		void *	game;		// Pointer to the game object
 		
-		void *	game;
+		virtual void draw();
 		
 };

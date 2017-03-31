@@ -1,6 +1,7 @@
 #include "Score.h"
 #include <Game.h>
 
+// Reset the score
 void Score::reset(){
 	lives = 3;
 	score = 0;
@@ -10,6 +11,7 @@ void Score::reset(){
 	dotseaten = 0;
 }
 
+// Ad an amount of points to the score
 void Score::add(int i){
 	score += i;
 	if(score>=10000 && !extralife){
@@ -18,6 +20,7 @@ void Score::add(int i){
 	}
 }
 
+// When a dot is eaten the counter inceases
 void Score::dot(){
 	if(++dotseaten==242){
 		dotseaten = 0;

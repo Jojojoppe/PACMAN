@@ -5,17 +5,17 @@ class Score {
 		bool 	extralife;
 		
 	public:
-		void 	reset();
-		void	add(int i);
-		void	dot();
-		
+	
 		int		score;
 		int		lives;
 		int 	fruitbonus;
 		int 	level;
-		
 		int 	dotseaten;
 		
-		void *	game;
+		void *	game;			// Pointer to the game object
+	
+		void 	reset();
+		void	add(int i);
+		void	dot();			// Eat a dot
 		
 };
