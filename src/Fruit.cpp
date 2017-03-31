@@ -57,27 +57,27 @@ void Fruit::eat(void * game){
 		switch (fruit){
 			case cherry:
 				((Game*)game)->score.add(100);
-				((Game*)game)->score.fruitbonus = 0;
+				((Game*)game)->score.fruitbonus = 1;
 				break;
 			case strawberry:
 				((Game*)game)->score.add(200);
-				((Game*)game)->score.fruitbonus = 1;
+				((Game*)game)->score.fruitbonus = 2;
 				break;
 			case orange:
 				((Game*)game)->score.add(300);
-				((Game*)game)->score.fruitbonus = 2;
+				((Game*)game)->score.fruitbonus = 3;
 				break;
 			case lemon:
 				((Game*)game)->score.add(500);
-				((Game*)game)->score.fruitbonus = 3;
+				((Game*)game)->score.fruitbonus = 4;
 				break;
 			case apple:
 				((Game*)game)->score.add(700); 
-				((Game*)game)->score.fruitbonus = 4;
+				((Game*)game)->score.fruitbonus = 5;
 				break;
 			case grapes:
 				((Game*)game)->score.add(1000); 
-				((Game*)game)->score.fruitbonus = 5;
+				((Game*)game)->score.fruitbonus = 6;
 				break;
 			default:
 				break;

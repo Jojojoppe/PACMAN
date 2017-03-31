@@ -1063,7 +1063,7 @@ void Game::drawScore(){
 	
 	// Draw fruitbonus
 	if(score.fruitbonus){
-		ObjectType ft = (ObjectType)(fruitCherry + score.fruitbonus);
+		ObjectType ft = (ObjectType)(fruitCherry + score.fruitbonus-1);
 		SDL_Rect dst = {4*24, 31*12, spriteMap[ft][sizex], spriteMap[ft][sizey]};
 		SDL_Rect src = {spriteMap[ft][x], spriteMap[ft][y], spriteMap[ft][sizex], spriteMap[ft][sizey]};
 		SDL_RenderCopy(renderer, sheet, &src, &dst);
