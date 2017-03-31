@@ -24,6 +24,14 @@ void Pacman::draw(){
 		}
 		// End of dead time
 		if(deadc>30){
+			// set ghost positions to start positions
+			for(auto &i : ((Game *)game)->field){
+				// Ghost
+				if(dynamic_cast<Ghost*>(i)!=NULL){
+					((Ghost*)i)->pos.x = 14*12;
+					((Ghost*)i)->pos.y = 14*12;
+				}
+			}
 			dead = false;
 			pos.x = 14*12;
 			pos.y = 23*12;
@@ -119,7 +127,7 @@ bool Pacman::checkCollision(){
 				if(!dead){
 					if(((Ghost*)i)->type==normal){
 						((Game*)game)->score.lives--;
-						dead = true;
+						dead = true;						
 					}else if(((Ghost*)i)->type==frightened || ((Ghost*)i)->type==almostdead){
 						((Ghost*)i)->type = (GhostType)(frightened+1);
 						((Ghost*)i)->speed = 7;
