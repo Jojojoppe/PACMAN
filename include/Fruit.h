@@ -2,6 +2,7 @@
 
 #include <StaticObject.h>
 enum FruitType{
+	nofruit,
 	cherry,
 	strawberry,
 	orange,
@@ -18,4 +19,6 @@ class Fruit : public StaticObject{
 	public:
 		void draw() override;
 		void eat(void * game);
+		FruitType fruit == nofruit;
+		
 };
