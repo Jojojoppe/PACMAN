@@ -84,6 +84,11 @@ void Game::newLevel(){
 	
 	SDL_RemoveTimer(timer);
 	
+	int fruitnr = rand()%44;
+	int fruitcnt = 0;
+	int fruiti = 0;
+	int fruitj = 0;
+	
 	// Create map
 	for(int i=0; i<map.size(); i++)
 		for(int j=0; j<map[i].size(); j++){
@@ -127,17 +132,25 @@ void Game::newLevel(){
 				w->sprite.sprite = mapToSprite[map[i][j]];
 				field.push_back(w);
 			}
+			
+			// Empty spot for fruit
+			if(map[i][j]==0){
+				if(fruitcnt++ == fruitnr){
+					fruiti = i;
+					fruitj = j;
+				}
+			}
 		}
-		
+	
 	//Add Fruit
 	Fruit * fruit = new Fruit();
-	fruit->pos.y = 17*12;
-	fruit->pos.x = 14*12;
+	fruit->pos.y = fruiti*12;
+	fruit->pos.x = fruitj*12-12;
 	fruit->sprite.pos.x = -6;
 	fruit->sprite.pos.y = -6;
 	fruit->sprite.sprite = null;
 	field.push_back(fruit);
-	
+
 	// Add pacman
 	pacman.pos.y = 23*12;
 	pacman.pos.x = 14*12;
