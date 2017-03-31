@@ -21,7 +21,7 @@
 void Game::main(){
 	
 	// Seed random
-	srand(time(0));
+	//	srand(time(0));	
 	
 	// Initialize window
 	SDL_Init(SDL_INIT_EVERYTHING);
